@@ -1,7 +1,7 @@
 
 const Login = () => {
   return (
-    <div></div>
+    <div>Login into site</div>
   )
 }
 
