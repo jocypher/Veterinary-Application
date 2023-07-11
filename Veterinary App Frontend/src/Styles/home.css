@@ -1,0 +1,128 @@
+body{
+    background-color: #F5F5F5;
+    padding: 0 0.5rem 0 0;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-areas: 
+    "sidebar section"
+    "sidebar recent"
+    ;
+}
+
+aside{
+    grid-area: "sidebar";
+    width: 18.44rem;
+    height: 90vh;
+}
+
+section{
+    grid-area: "section";
+    height: 50vh;
+}
+
+footer{
+    grid-area: "recent";
+    background-color: darkorchid;
+    height: 40vh;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    padding-left: 5rem;
+}
+
+h3{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #215EBE;
+    font-style: normal;
+    font-weight: 400;
+    margin-top: 3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.resource_name{
+    display: flex;
+    align-items: center;
+    color: #374151;
+    font-size: 1.2rem;
+    margin: 3rem 0 1rem 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: normal;
+    font-weight: 400;
+}
+
+.resource__holder{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 20%;
+    gap: 2rem;
+
+    /* overflow-y: auto;
+    overscroll-behavior-inline: contain; */
+}
+
+.media__element{
+    background-color: #E8E9ED;
+    width: 11rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5rem;
+    padding: 0;
+}
+
+.title {
+    font-size: 1.2rem;
+    color: #4C5463;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+    line-height: normal;
+    font-style: normal;
+}
+
+.resource__link{
+    text-decoration: none;
+}
+
+h5{
+    color: #374151;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    line-height: normal;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.recent__name{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin-top: 3rem;
+}
+
+.properties{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: 2rem 5rem;
+    padding: 5px 0;
+}
+.props{
+    color: rgba(55, 65, 81, 0.59);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.15rem;
+}

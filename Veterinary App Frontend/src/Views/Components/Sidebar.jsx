@@ -1,20 +1,21 @@
+import '../../Styles/Sidebar.css'
 
 const Sidebar = () => {
   return (
     <>
     <div className="sidebar">
-      <h1>Side menu</h1>
+      <h2>Side menu</h2>
       <ul className="menu-list">
-        <li><a href="/">Dictinary</a></li>
-        <li><a href="/">Ug Library</a></li>
-        <li><a href="/">Events</a></li>
-        <li><a href="/">FAQ</a></li>
-        <li><a href="/">Feedback</a></li>
-        <li><a href="/">Contact</a></li>
-        <li><a href="/">Upload</a></li>
+        <li><a href="/" className='list-name'>Dictionary</a></li>
+        <li><a href="/" className='list-name'>Ug Library</a></li>
+        <li><a href="/" className='list-name'>Events</a></li>
+        <li><a href="/" className='list-name'>FAQ</a></li>
+        <li><a href="/" className='list-name'>Feedback</a></li>
+        <li><a href="/" className='list-name'>Contact</a></li>
+        <li><a href="/" className='list-name'>Upload</a></li>
       </ul>
-      <div className="logout__btn">
-        <a href="/">Log Out</a>
+      <div className="menu-log">
+        <a href="/" className='list-log'>Log Out</a>
       </div>
     </div>
     </>

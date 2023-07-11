@@ -6,14 +6,14 @@ import "../../Styles/Navigation.css"
 const Navigation = ({id, update}) => {
   return (
     <>
-    <nav className="navbar">
+    <div className="navbar">
       <div className="navbar__toggle" id="mobile-menu">
         <span className="bar"></span>
         <span className="bar"></span>
         <span className="bar"></span>
       </div>
       <div className="logo">
-        <a href="/">VetMed</a>
+        <a href="/" className="logo-name">VetMed</a>
       </div>
       <div className="navbar__search">
         <img src={SearchIcon} id="search_icon"/>
@@ -41,7 +41,7 @@ const Navigation = ({id, update}) => {
           <label htmlFor="avatar" id="avatar-id">{id}</label>
       </div>
       </div>
-    </nav>
+    </div>
     </>
   )
 }
