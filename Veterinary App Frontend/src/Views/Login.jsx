@@ -17,11 +17,21 @@ const Login = () => {
     </div>
     </section>
 
-    <section>
-    <h1 className="welcome">Welcome</h1>
-    <input type="text" id="studentid" value="Student ID"/><br />
-    <input type="text" id="pin" value="PIN"/><br/>
-    <input type="submit" id="login" value="Login"/>
+    <section className="section2">
+    <h1 className="welcome">Welcome!</h1>
+    <form action="/">
+      <div className="input_container">
+        <div className="input_id">
+          <label htmlFor="id" id="student_id">Student ID</label>
+          <input type="text" name="id" id="std_id" required/><br/>
+        </div>
+        <div className="input_pin"> 
+          <label htmlFor="pin" id="student_pin">PIN</label>
+          <input type="password" name="pin" id="std_pin" required />
+        </div>
+      </div>
+      <input type="Submit" id="submit_button" value="Login"/>
+    </form>
     </section>
     </main>
 
