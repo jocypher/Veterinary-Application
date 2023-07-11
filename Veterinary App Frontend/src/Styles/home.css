@@ -141,3 +141,10 @@ h5{
     overflow-y: scroll;
     scroll-behavior: smooth;
 }
+
+@media screen and(max-width:800px) {
+    header{
+        display: flex;
+        background-color: red;
+    }    
+}
