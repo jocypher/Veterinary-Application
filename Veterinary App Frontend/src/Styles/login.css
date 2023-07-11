@@ -1,0 +1,84 @@
+main{
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    height: 100vh;
+}
+section:nth-of-type(1){
+    background-color:#F5F7F9;
+    ;
+}
+.pd{
+    background-color: #F5F7F9;
+    font-size: larger;
+    width: 265.36px;
+    height: 69.74px;
+    margin-left: 73.14px;
+    margin-top: 85.9px;
+    display: flex;
+    align-items: center;
+}
+.welcome{
+    width: 153px;
+    height: 44px;
+}
+p{
+    margin-left: 73.14px;
+    background-color: #F5F7F9;
+    margin-top: 25em;
+}
+.images{
+    width: 28em;
+    position: relative;
+}
+.images img:nth-of-type(1){
+    position: absolute;
+    top: 7em;
+    left: 14em;
+    width: 150px;
+}
+.images img:nth-of-type(2){
+    position: absolute;
+    left: 73.14px;
+    top: 15em;
+    width: 170px;
+}
+.images img:nth-of-type(3){
+    position: absolute;
+    width: 150px;
+    left: 8em;
+    top: 1em;
+}
+.welcome{
+    margin-left: 200px;
+    margin-top: 6em;
+}
+#studentid{
+    background-color: #F5F7F9;
+    border-radius: 13px;
+    width: 470px;
+    margin-left: 200px;
+    padding-top: 8px;
+    display: flex;
+    align-items: center;
+}
+#pin{
+    background-color: #F5F7F9;
+    border-radius: 13px;
+    width: 470px;
+    margin-left: 200px;
+    padding-top: 8px;
+    margin-top: 8px;
+}
+#login{
+    background: #215EBE;
+    color: #ffffff;
+    margin-left: 200px;
+    margin-top: 10px;
+    border-radius: 13px;
+    width: 470px;
+    padding: 0.5em;;
+    display: flex;
+    align-items: center;
+    place-content: center;
+
+}
