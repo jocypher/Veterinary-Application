@@ -5,9 +5,9 @@ import Recents from "../Components/Recents"
 const Home = () => {
   return (
     <div>
-      {/* <Navigation id="10952541"/> */}
+      <Navigation id="10952541" update="There will be exams on 5th July"/>
       {/* <Sidebar/> */}
-      <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
+      {/* <Recents name="DCIT208" type="Slides" lastOpened="20:17"/> */}
     </div>
   )
 }

@@ -1,9 +1,9 @@
 import SearchIcon from "../../assets/search.png"
 import UpdateIcon from "../../assets/notification.png"
 import Avatar from "../../assets/avatar.png"
-import "../../Styles/"
+import "../../Styles/Navigation.css"
 
-const Navigation = ({id}) => {
+const Navigation = ({id, update}) => {
   return (
     <>
     <nav className="navbar">
@@ -16,18 +16,30 @@ const Navigation = ({id}) => {
         <a href="/">VetMed</a>
       </div>
       <div className="navbar__search">
-        <img src={SearchIcon} />
-        <input type="search" placeholder="Search anything..."/>
+        <img src={SearchIcon} id="search_icon"/>
+        <input type="search" placeholder="Search anything..." id="search" />
       </div>
+      <div className="user__mode">
       <div className="navbar__update">
-        <img src={UpdateIcon} alt="your update" />
-        <label htmlFor="update">Update</label>
+        <div className="dropdown">
+        <div className="update__image">
+        <img src={UpdateIcon} alt="your update" id="update-icon"/>
+        <div className="dropdown-menu">
+        <ul>
+          <li><a href="/" className="update-menu">{update}</a></li>
+          <li><a href="/" className="update-menu">{update}</a></li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        <label htmlFor="update" id="image-name">Update</label>
       </div>
       <div className="navbar__login">
           <div className="container">
-            <img src={Avatar} alt="" />
+            <img src={Avatar} id="avatar-icon" />
           </div>
-          <label htmlFor="avatar">{id}</label>
+          <label htmlFor="avatar" id="avatar-id">{id}</label>
+      </div>
       </div>
     </nav>
     </>
