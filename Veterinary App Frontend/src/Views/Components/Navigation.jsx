@@ -7,6 +7,7 @@ const Navigation = ({id, update}) => {
   return (
     <>
     <div className="navbar">
+      <div className="media">
       <div className="navbar__toggle" id="mobile-menu">
         <span className="bar"></span>
         <span className="bar"></span>
@@ -14,6 +15,7 @@ const Navigation = ({id, update}) => {
       </div>
       <div className="logo">
         <a href="/" className="logo-name">VetMed</a>
+      </div>
       </div>
       <div className="navbar__search">
         <img src={SearchIcon} id="search_icon"/>

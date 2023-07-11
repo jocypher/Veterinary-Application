@@ -77,3 +77,26 @@ h2{
     font-size: 1rem;
     color: #EEF3F5;
 }
+
+@media screen and (max-width:1050px){
+    .sidebar{
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        left: -100000rem;
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
+        z-index: -1;
+        background-color: #215EBE;
+    }
+    .sidebar.active{
+        background-color: #215EBE;
+        left: 5rem;
+        opacity: 1;
+        transition: all 0.5 ease-in-out;
+        font-size: 1.5rem;
+        z-index: 99;
+    }
+}
