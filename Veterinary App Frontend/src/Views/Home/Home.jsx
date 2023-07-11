@@ -10,7 +10,7 @@ import news from '../../assets/news.svg'
 const Home = () => {
   return (
     <>
-    <body>
+    <div className="body">
     <header>
       <Navigation id="10952541" update="There will be exams on 5th July"/>
     </header>
@@ -66,11 +66,21 @@ const Home = () => {
             <li className="props">Last Opened</li>
           </ul>
         </div>
-      <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
+        <div className="recent__items">
+        <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
+        <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
+        <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
+        <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
+        <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
+        <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
+        <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
+        <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
+        <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
+        </div>
       </footer>
       </nav>
     </main>
-    </body>
+    </div>
     </>
   )
 }

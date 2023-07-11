@@ -27,7 +27,6 @@ const Navigation = ({id, update}) => {
         <div className="dropdown-menu">
         <ul>
           <li><a href="/" className="update-menu">{update}</a></li>
-          <li><a href="/" className="update-menu">{update}</a></li>
         </ul>
         </div>
         </div>

@@ -1,12 +1,10 @@
 .sidebar{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     background-color: #215EBE;
     border-top-right-radius: 5rem;
     height: 100%;
-    /* width: 18.45rem; */
+    width: 100%;
 }
 
 h2{
@@ -16,38 +14,66 @@ h2{
     background-color: #f5f5f5;
     color: #374151;
     border-radius: 20rem;
-    width: 12rem;
-    height: 2.5rem;
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 10rem;
+    padding: 0;
+    margin: 0;
+    margin-top: 3.2rem;
+    margin-left: 1.2rem;
+    height: 1.7rem;
     /* margin-top: 5rem; */
 }
 
-.menu-list{
+.sidebar ul{
     display: flex;
     flex-direction: column;
     gap: 1.8rem;
-    width: 12rem;
-    margin-top: 1.5rem;
+    /* width: 11rem; */
+    margin: 2.5rem 0 0 0em ;
+    width: 100%;
+    padding: 0 0 0 1.2rem;
     list-style: none;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+
+}
+
+.menu-list li{
+    /* padding: 0.5em 3em; */
+    margin: 0;
+    padding: 0.4em 10px;
+    margin-right: 1em;
+    /* display: flex; */
+    border-radius: 5px;
+    cursor: pointer;
+    color: #EEF3F5;
+}
+
+.menu-list li:hover{
+    background-color: #fff;
+    color: #000;
 }
 
 .list-name{
     text-decoration: none;
-    font-size: 1.2rem;
-    color: #EEF3F5;
+    font-size: 1rem;
+    color: inherit;
 }
 
 .menu-log{
         display: flex;
-        align-items: center;
-        margin-top: 5rem;
-        width: 11rem;
+        /* margin-top: 5rem; */
+        /* width: 11rem; */
+        margin: 0;
+        width: 100%;
         list-style: none;
         font-family:Verdana, Geneva, Tahoma, sans-serif;
+        margin: 5rem 0 0 1.2rem ;
 }
 
 .list-log{
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #EEF3F5;
 }

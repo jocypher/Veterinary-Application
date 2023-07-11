@@ -8,16 +8,6 @@ const Recents = ({name, type, lastOpened}) => {
       <label htmlFor="name">{type}</label>
       <label htmlFor="name">{lastOpened}</label>
     </div>
-    <div className="list">
-      <label htmlFor="name">{name}</label>
-      <label htmlFor="name">{type}</label>
-      <label htmlFor="name">{lastOpened}</label>
-    </div>
-    <div className="list">
-      <label htmlFor="name">{name}</label>
-      <label htmlFor="name">{type}</label>
-      <label htmlFor="name">{lastOpened}</label>
-    </div>
     </>
   )
 }
