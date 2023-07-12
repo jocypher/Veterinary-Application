@@ -1,0 +1,13 @@
+.list{
+    display: grid;
+    grid-template-columns: 4fr 4.2fr 0.5fr;
+    margin: 10px 30px 10px 20px;
+    border-bottom: 1px solid rgba(55, 65, 81, 0.25);
+    padding-right: 2rem;
+    padding-bottom: 1.1rem; 
+}
+label{
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
