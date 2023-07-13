@@ -1,8 +1,11 @@
 import "../Styles/pastquestions.css"
+import PastQuestionItem from "./Components/PastQuestionItem"
 
 const PastQuestion = () => {
   return (
-    <main className="pastQuestions">Past Question</main>
+    <main className="pastQuestions">
+      <PastQuestionItem/>
+    </main>
   )
 }
 

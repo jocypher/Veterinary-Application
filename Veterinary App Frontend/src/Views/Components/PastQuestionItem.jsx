@@ -1,7 +1,12 @@
 import "../../Styles/PastQuestionItem.css"
-const PastQuestionItem = () => {
+const PastQuestionItem = ({title, year}) => {
   return (
-    <>PastQuestionItem</>
+    <>
+    <ul className="past">
+      <li className="past_items">{title}</li>
+      <li className="past_items">{year}</li>
+    </ul>
+    </>
   )
 }
 

@@ -1,0 +1,16 @@
+.slidess{
+    display: grid;
+    grid-template-columns: 5fr 1fr 1fr;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    padding-bottom: 1.5rem;
+    background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.65) 50%, #FFF 100%);
+}
+
+.slides_items{
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+}

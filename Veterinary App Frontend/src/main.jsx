@@ -5,17 +5,13 @@ import './index.css'
 import '../src/Views/Components/Sidebar.jsx'
 import '../src/Views/Components/Navigation.jsx'
 import '../src/Views/Components/Recents.jsx'
+import Past from './Past.jsx'
+import Book from './Books.jsx'
+import Slide from './Views/Slide.jsx'
+import Slides from './Styles/Slides.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Slide/>
+  </React.StrictMode>
 )
-
-// const menu = document.querySelector("#mobile-menu");
-// const menuLinks = document.querySelector('.sidebar');
-
-// menu.addEventListener('click', function(){
-//        menu.classList.toggle('is-active');
-//        menuLinks.classList.toggle('active');
-// })
