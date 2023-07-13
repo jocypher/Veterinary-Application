@@ -1,4 +1,4 @@
-.slides_main{
+.book_main{
     background-color: #F5F5F5;
     height: 89.5vh;
     padding:0 2rem 0 2rem;
@@ -16,9 +16,9 @@ h1{
     justify-content: flex-start;
 }
 
-.Slides_type{
+.book_type{
     display: grid;
-    grid-template-columns: 5fr 1fr 1fr;
+    grid-template-columns: 5fr 2.5fr 1fr 1fr 3fr;
     background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.65) 50%, #FFF 100%);
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
@@ -26,7 +26,7 @@ h1{
     margin-bottom: 20px;
 }
 
-.slides_name{
+.book_name{
     display: flex;
     align-items: center;
     color: rgba(55, 65, 81, 0.59);
@@ -34,20 +34,10 @@ h1{
     font-size: 1rem;
     margin-bottom: 15px;
 }
-.slides_container{
+.book_container{
     overflow-y: scroll;
     height: 73vh;
 }
 ::-webkit-scrollbar{
     display: none;
-}
-
-@media (max-width:580px) {
-    .Slides_type{
-        gap: 1.2rem;
-    }
-
-    h1{
-        font-size: 1.3rem;
-    }
 }

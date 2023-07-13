@@ -1,0 +1,17 @@
+.events_items{
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    width: 70vw;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    padding-bottom: 1.2rem;
+    background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.65) 50%, #FFF 100%);
+}
+
+.events_items_l{
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+}

@@ -1,14 +1,14 @@
 import './App.css'
 import Navigation from './Views/Components/Navigation'
-import Main_book from './Views/Home/Main_book'
+import Main_past from './Views/Home/Main_past'
 
-function App() {
+function Past() {
 
   return (
     <>
     <Navigation id="10950660"/>
-    <Main_book/>
+    <Main_past/>
     </>
     )
 }
-export default App
+export default Past

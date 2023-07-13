@@ -1,8 +1,14 @@
+import React from "react"
 import "../../Styles/slideItem.css"
-
-const SlideItem = () => {
+const SlideItem = ({title, Session, Slides}) => {
   return (
-    <>SlideItem</>
+    <>
+    <ul className="slidess">
+      <li className="slides_items">{title}</li>
+      <li className="slides_items">{Session}</li>
+      <li className="slides_items">{Slides}</li>
+    </ul>
+    </>
   )
 }
 

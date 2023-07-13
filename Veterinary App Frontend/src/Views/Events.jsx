@@ -1,8 +1,13 @@
 import "../Styles/events.css"
 
-const Events = () => {
+const Events = ({Event, Date}) => {
   return (
-    <main className="events">Events</main>
+    <main className="events">
+      <ul className="events_items">
+        <li className="events_items_l">{Event}</li>
+        <li className="events_items_l">{Date}</li>
+      </ul>
+    </main>
   )
 }
 

@@ -2,7 +2,7 @@ import './App.css'
 import Navigation from './Views/Components/Navigation'
 import Main_book from './Views/Home/Main_book'
 
-function App() {
+function Book() {
 
   return (
     <>
@@ -11,4 +11,4 @@ function App() {
     </>
     )
 }
-export default App
+export default Book
