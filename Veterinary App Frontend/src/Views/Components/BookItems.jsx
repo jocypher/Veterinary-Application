@@ -1,7 +1,15 @@
 import "../../Styles/bookItem.css"
-const BookItems = () => {
+const BookItems = ({title,author, page,year,publisher}) => {
   return (
-    <>BookItem</>
+    <>
+    <ul className="books">
+      <li className="book_items">{title}</li>
+      <li className="book_items">{author}</li>
+      <li className="book_items">{page}</li>
+      <li className="book_items">{year}</li>
+      <li className="book_items">{publisher}</li>
+    </ul>
+    </>
   )
 }
 
