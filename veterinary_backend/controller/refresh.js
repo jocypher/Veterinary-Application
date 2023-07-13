@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken");
 const User = require('../models/User')
 
 const handleRefreshToken = async (req, res) => {
+    console.log("working");
     const cookie = req.cookies;
     if (!cookie.jwt) {return res.status(401)};
     const refreshToken = cookie.jwt;
@@ -9,10 +10,10 @@ const handleRefreshToken = async (req, res) => {
     const foundUser = await User.findOne({refreshToken}).exec();
     if (!foundUser) return res.status(401);
     jwt.verify(
-        refreshToken,git 
+        refreshToken,
         process.env.REFRESH_TOKEN_SECRET,
         (err, decoded) => {
-            if (err || foundUser.studentId != decoded.studentId) return res.status(403);
+            if (err || foundUser.studentId != decoded.studentId) return res.sendStatus(403);
             const accessToken = jwt.sign(
                 {studentId: decoded.studentId},
                 process.env.ACCESS_TOKEN_SECRET,

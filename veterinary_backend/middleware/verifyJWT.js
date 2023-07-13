@@ -8,7 +8,7 @@ const verifyJWT = (req, res, next) => {
         token,
         process.env.ACCESS_TOKEN_SECRET,
         (err, decode) => {
-           if (err) return res.status(403);
+           if (err || foundUser.studentId != decoded.studentId) return res.sendStatus(403);
            req.user = decode.studentId; 
            next();
         }
