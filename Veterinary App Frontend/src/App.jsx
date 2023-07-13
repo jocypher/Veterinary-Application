@@ -1,12 +1,14 @@
 import './App.css'
 import Login from './Views/Login'
-import Home from './Views/Home/Home'
+//import Feedback from './Views/Feedback'
+
 
 function App() {
 
   return (
     <>
-    <Home/>
+    <Login/>
+    {/* <Feedback/> */}
     </>
     )
 }
