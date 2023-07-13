@@ -1,8 +1,14 @@
+import "../../Styles/Recents.css"
 
-
-const Recents = () => {
+const Recents = ({name, type, lastOpened}) => {
   return (
-    <div>Recents</div>
+    <>
+    <div className="list">
+      <label htmlFor="name">{name}</label>
+      <label htmlFor="name">{type}</label>
+      <label htmlFor="name">{lastOpened}</label>
+    </div>
+    </>
   )
 }
 

@@ -1,6 +1,7 @@
 import './App.css'
 import Login from './Views/Login'
-import Feedback from './Views/Feedback'
+//import Feedback from './Views/Feedback'
+
 
 function App() {
 
@@ -11,5 +12,4 @@ function App() {
     </>
     )
 }
-
 export default App
