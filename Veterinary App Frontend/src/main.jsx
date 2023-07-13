@@ -9,9 +9,10 @@ import Past from './Past.jsx'
 import Book from './Books.jsx'
 import Slide from './Views/Slide.jsx'
 import Slides from './Styles/Slides.jsx'
+import EventItem from './Views/Components/EventItem.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Slide/>
+    <EventItem/>
   </React.StrictMode>
 )
