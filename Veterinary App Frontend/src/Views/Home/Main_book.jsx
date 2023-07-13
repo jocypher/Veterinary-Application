@@ -14,6 +14,7 @@ const Mainbook = () => {
         <li className="book_name">Year</li>
         <li className="book_name">Publisher</li>
     </ul>
+    <div className="book_container">
     <BookItems title="Introduction to computer organization" author="Samuel William" page="1111"  year="2017"  publisher="Lionsgate Publisher"/>
     <BookItems title="Introduction to computer organization" author="Samuel William" page="1111"  year="2017"  publisher="Lionsgate Publisher"/>
     <BookItems title="Introduction to computer organization" author="Samuel William" page="1111"  year="2017"  publisher="Lionsgate Publisher"/>
@@ -28,6 +29,7 @@ const Mainbook = () => {
     <BookItems title="Introduction to computer organization" author="Samuel William" page="1111"  year="2017"  publisher="Lionsgate Publisher"/>
     <BookItems title="Introduction to computer organization" author="Samuel William" page="1111"  year="2017"  publisher="Lionsgate Publisher"/>
     <BookItems title="Introduction to computer organization" author="Samuel William" page="1111"  year="2017"  publisher="Lionsgate Publisher"/>
+    </div>
     </div>
     </>
   )

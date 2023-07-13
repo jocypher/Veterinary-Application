@@ -6,7 +6,7 @@ const BookItems = ({title,author, page,year,publisher}) => {
       <li className="book_items">{title}</li>
       <li className="book_items">{author}</li>
       <li className="book_items">{page}</li>
-      <li className="book_items">{year}</li>
+      <li className="book_items.y">{year}</li>
       <li className="book_items">{publisher}</li>
     </ul>
     </>
