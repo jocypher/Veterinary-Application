@@ -1,50 +1,14 @@
-import React from "react"
-import "../../Styles/eventItem.css"
-import Events from "../Events"
-import Sidebar from "./Sidebar"
-import Navigation from "./Navigation"
-const EventItem = () => {
+import "../Styles/events.css"
+
+const Events = ({Event, Date}) => {
   return (
-    <>
-    <div className="body">
-    <header>
-      <Navigation id="10952541" update="There will be exams on 5th July"/>
-    </header>
-    <main>
-      <aside><Sidebar/></aside>
-      <nav>
-    <div className="events_main">
-      <h1>Events</h1>
-      <ul className="Events_type">
-          <li className="Events_name">Event</li>
-          <li className="Events_name">Date</li>
+    <main className="events">
+      <ul className="events_items">
+        <li className="events_items_l">{Event}</li>
+        <li className="events_items_l">{Date}</li>
       </ul>
-      <div className="events_container">
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      </div>
-      </div>
-      </nav>
-      </main>
-      </div>
-    </>
+    </main>
   )
 }
 
-export default EventItem
+export default Events

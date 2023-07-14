@@ -1,9 +1,11 @@
 import React from "react"
-import PastQuestionItem from "../Components/PastQuestionItem"
+import PastQuestionItem from "./Components/PastQuestionItem"
 import "../../Styles/pastquestions.css"
+import Navigation from "./Components/Navigation"
 const Mainpast = () => {
     return (
       <>
+      <header><Navigation id="10952541"/></header>
       <div className="past_main">
       <h1>Past Questions</h1>
       <ul className="main_type">
