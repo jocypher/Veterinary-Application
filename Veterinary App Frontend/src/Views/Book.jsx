@@ -1,10 +1,13 @@
 import React from 'react'
-import BookItems from '../Components/BookItems'
+import BookItems from './Components/BookItems'
 import "../../Styles/Mainbook.css"
+import Navigation from './Components/Navigation'
 
 const Mainbook = () => {
   return (
     <>
+    <main>
+    <header><Navigation id="10952541"/></header>
     <div className="book_main">
     <h1>Books</h1>
     <ul className="book_type">
@@ -31,6 +34,7 @@ const Mainbook = () => {
     <BookItems title="Introduction to computer organization" author="Samuel William" page="1111"  year="2017"  publisher="Lionsgate Publisher"/>
     </div>
     </div>
+    </main>
     </>
   )
 }
