@@ -1,11 +1,31 @@
-.past_main{
+.body{
+    background-color:#F5F5F5;   
+    height: 100%;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+    "sidebar section";
+    height: 100%;
+}
+
+aside{
+    grid-area: sidebar;
+}
+
+nav{
+    grid-area: section;
+    padding-left: 5rem;
+}
+
+.events_main{
     background-color: #F5F5F5;
     height: 89.5vh;
-    padding:0 2rem 0 2rem;
-    margin: 0;
-    width: 90;
-    display: flex;
-    flex-direction: column;
+    padding:0 1rem 0 2rem;
+    margin: 2rem;
 }
 h1{
     display: flex;
@@ -18,9 +38,9 @@ h1{
     justify-content: flex-start;
 }
 
-.main_type{
+.Events_type{
     display: grid;
-    grid-template-columns: 5fr 2fr;
+    grid-template-columns: 4fr 2fr;
     background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.65) 50%, #FFF 100%);
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
@@ -28,7 +48,7 @@ h1{
     margin-bottom: 20px;
 }
 
-.past_name{
+.Events_name{
     display: flex;
     align-items: center;
     color: rgba(55, 65, 81, 0.59);
@@ -36,7 +56,7 @@ h1{
     font-size: 1rem;
     margin-bottom: 15px;
 }
-.past_container{
+.events_container{
     overflow-y: scroll;
     height: 73vh;
 }

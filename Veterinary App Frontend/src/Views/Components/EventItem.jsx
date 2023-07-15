@@ -1,4 +1,4 @@
-import "../Styles/events.css"
+import "../../Styles/eventItem.css"
 
 const Events = ({Event, Date}) => {
   return (

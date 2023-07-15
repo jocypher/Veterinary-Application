@@ -1,11 +1,9 @@
 import './App.css'
-import Slide from './views/Slide'
-
+import Contact from './Views/Contact'
 function App() {
-
   return (
     <>
-    <Slide/>
+    <Contact/>
     </>
     )
 }
