@@ -1,12 +1,12 @@
 import React from "react"
 import SlideItem from "./Components/SlideItem"
-import "../Styles/slides.css"
+import '../Styles/slides.css'
 import Navigation from "./Components/Navigation"
-const Mainslide = () => {
+const Slide = () => {
     return (
       <>
       <main>
-      <header><Navigation id="10952541"/></header>
+      <Navigation id="10952541"/>
       <div className="slides_main">
       <h1>Slides</h1>
       <ul className="Slides_type">
@@ -40,4 +40,4 @@ const Mainslide = () => {
     )
   }
   
-  export default Mainslide
+  export default Slide

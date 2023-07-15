@@ -1,11 +1,12 @@
 import './App.css'
-import Slide from './views/Slide'
-
+import SlideItem from './Views/Components/SlideItem'
+import Events from './Views/Events'
+import Slide from './Views/Slide'
 function App() {
 
   return (
     <>
-    <Slide/>
+    <Events/>
     </>
     )
 }

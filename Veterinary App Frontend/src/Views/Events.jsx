@@ -1,43 +1,41 @@
 import React from "react"
-import "../../Styles/eventItem.css"
-import Events from "./Components/EventItem"
+import '../Styles/event.css'
+import EventItem from "./Components/EventItem"
 import Sidebar from "./Components/Sidebar"
 import Navigation from "./Components/Navigation"
-const EventItem = () => {
+const Events = () => {
   return (
     <>
     <div className="body">
-    <header>
-      <Navigation id="10952541" update="There will be exams on 5th July"/>
-    </header>
+    <Navigation id="10952541" update="There will be exams on 5th July"/>
     <main>
       <aside><Sidebar/></aside>
       <nav>
-    <div className="events_main">
+      <div className="events_main">
       <h1>Events</h1>
       <ul className="Events_type">
           <li className="Events_name">Event</li>
           <li className="Events_name">Date</li>
       </ul>
       <div className="events_container">
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
-      <Events Event="Assignment don post finish" Date="08/05/2023"/>
+      <EventItem Event="Assignment don post finish" Date="08/05/2023"/>
+      <EventItem Event="Assignment don post finish" Date="08/05/2023"/>
+      <EventItem Event="Assignment don post finish" Date="08/05/2023"/>
+      <EventItem Event="Assignment don post finish" Date="08/05/2023"/>
+      <EventItem Event="Assignment don post finish" Date="08/05/2023"/>
+      <EventItem Event="Assignment don post finish" Date="08/05/2023"/>
+      <EventItem Event="Assignment don post finish" Date="08/05/2023"/>
+      <EventItem Event="Assignment don post finish" Date="08/05/2023"/>
+      <EventItem Event="Assignment don post finish" Date="08/05/2023"/>
+      <EventItem Event="Assignment don post finish" Date="08/05/2023"/>
+      <EventItem Event="Assignment don post finish" Date="08/05/2023"/>
+      <EventItem Event="Assignment don post finish" Date="08/05/2023"/>
+      <EventItem Event="Assignment don post finish" Date="08/05/2023"/>
+      <EventItem Event="Assignment don post finish" Date="08/05/2023"/>
+      <EventItem Event="Assignment don post finish" Date="08/05/2023"/>
+      <EventItem Event="Assignment don post finish" Date="08/05/2023"/>
+      <EventItem Event="Assignment don post finish" Date="08/05/2023"/>
+      <EventItem Event="Assignment don post finish" Date="08/05/2023"/>
       </div>
       </div>
       </nav>
@@ -47,4 +45,4 @@ const EventItem = () => {
   )
 }
 
-export default EventItem
+export default Events
