@@ -1,8 +1,13 @@
 import "../../Styles/NewsItem.css"
 
-const NewsItem = () => {
+const NewsItem = ({title, source}) => {
   return (
-    <>NewsItem</>
+    <>
+        <ul className="news_ul">
+          <li className="news_title">{title}</li>
+          <li className="news_source">{source}</li>
+        </ul>
+    </>
   )
 }
 
