@@ -1,6 +1,7 @@
 import "../../Styles/eventItem.css"
 
-const Events = ({Event, Date}) => {
+
+const EventItem = ({Event, Date}) => {
   return (
     <main className="events">
       <ul className="events_items">
@@ -11,4 +12,4 @@ const Events = ({Event, Date}) => {
   )
 }
 
-export default Events
+export default EventItem

@@ -3,17 +3,18 @@
     height: 100%;
 }
 
-main{
+.eventsMain{
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: 100%;
     grid-template-areas: 
     "sidebar section";
-    height: 100%;
 }
 
 aside{
     grid-area: sidebar;
+
+    /* width: 15rem; */
 }
 
 nav{

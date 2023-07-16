@@ -1,18 +1,18 @@
+
 import "../Styles/event.css"
 import EventItem from "./Components/EventItem"
 import Sidebar from "./Components/Sidebar"
 import Navigation from "./Components/Navigation"
 const Event = () => {
+  
   return (
     <>
     <div className="body">
-    <header>
-      <Navigation id="10952541" update="There will be exams on 5th July"/>
-    </header>
-    <main>
+    <Navigation id="10952541" update="There will be exams on 5th July"/>
+    <main className="eventsMain">
       <aside><Sidebar/></aside>
       <nav>
-    <div className="events_main">
+      <div className="events_main">
       <h1>Events</h1>
       <ul className="Events_type">
           <li className="Events_name">Event</li>
