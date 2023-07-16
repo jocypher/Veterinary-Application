@@ -1,4 +1,5 @@
-import '../../Styles/eventItem.css'
+import "../../Styles/eventItem.css"
+
 
 const EventItem = ({Event, Date}) => {
   return (

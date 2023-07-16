@@ -1,0 +1,43 @@
+.contact{
+    display: flex;
+    flex-direction: column;
+    height: 10rem;
+    width: 19rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 7px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+.contact_name{
+    color: #000;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    padding-bottom: 15px;
+}
+.contact_location{
+    color: #000;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+.contact_office{
+    color: #000;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+.contact_email{
+    color: #000;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 10px;
+}

@@ -1,9 +1,8 @@
-import React from 'react'
 import BookItems from './Components/BookItems'
-import "../../Styles/Mainbook.css"
+import "../Styles/Mainbook.css"
 import Navigation from './Components/Navigation'
 
-const Mainbook = () => {
+const Book = () => {
   return (
     <>
     <main>
@@ -39,4 +38,4 @@ const Mainbook = () => {
   )
 }
 
-export default Mainbook
+export default Book

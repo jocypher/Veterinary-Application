@@ -1,14 +1,15 @@
-import React from "react"
-import '../Styles/event.css'
+
+import "../Styles/event.css"
 import EventItem from "./Components/EventItem"
 import Sidebar from "./Components/Sidebar"
 import Navigation from "./Components/Navigation"
-const Events = () => {
+const Event = () => {
+  
   return (
     <>
     <div className="body">
     <Navigation id="10952541" update="There will be exams on 5th July"/>
-    <main>
+    <main className="eventsMain">
       <aside><Sidebar/></aside>
       <nav>
       <div className="events_main">
@@ -45,4 +46,4 @@ const Events = () => {
   )
 }
 
-export default Events
+export default Event

@@ -1,6 +1,5 @@
-import React from "react"
 import PastQuestionItem from "./Components/PastQuestionItem"
-import "../../Styles/pastquestions.css"
+import "../Styles/pastquestions.css"
 import Navigation from "./Components/Navigation"
 const Mainpast = () => {
     return (
