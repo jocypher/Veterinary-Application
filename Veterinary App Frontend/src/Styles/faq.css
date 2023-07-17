@@ -1,15 +1,18 @@
 .faq_body{
     background-color: #F5F5F5;
     margin: 0;
+    height: 100vh;
 }
 .faq_main{
     height: 88vh;
+    display: flex;
+    flex-direction: column;
     margin-left: 2.3rem;
     margin-right: 1.6rem;
     overflow-y: scroll;
 }
 .faq_name{
-    padding: 0;
+    padding: 1rem 0;
     margin-bottom: 0;
 }
 
@@ -30,6 +33,8 @@
     height:7rem;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    padding-right: 10px;
     gap: 0;
 }
 .faq_title{

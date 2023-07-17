@@ -3,6 +3,7 @@
     grid-template-columns: 1fr 5fr;
     grid-template-areas: "aside nav";
     background-color: #F5F5F5;
+    padding-top: 1rem;
 }
 aside{
 grid-area: aside;
@@ -14,12 +15,15 @@ padding-left: 2rem;
 .contactitem{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
     overflow-y: scroll;
-    height: 75vh;
+    height: 80vh;
+    padding-right: 1rem;
 }
 .Contact_header{
-    padding-left: 3rem;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
 }
 
 @media(max-width:1050px) {
@@ -30,6 +34,13 @@ padding-left: 2rem;
         padding: 0;
     }
     .Contact_header{
+        padding: 0;
+        padding-bottom: 1rem;
+    }
+    .contactitem{
+        padding: 0;
+    }
+    .contact_holder{
         padding: 0;
     }
 }

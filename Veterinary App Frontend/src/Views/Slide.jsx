@@ -5,8 +5,8 @@ import Navigation from "./Components/Navigation"
 const Slide = () => {
     return (
       <>
-      <main>
-      <Navigation id="10952541"/>
+      <main className="main_slide">
+        <header><Navigation id="10952541"/></header>
       <div className="slides_main">
       <h1>Slides</h1>
       <ul className="Slides_type">

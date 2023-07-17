@@ -33,13 +33,13 @@ const Navigation = ({id, update}) => {
         </div>
         </div>
         </div>
-        <label htmlFor="update" id="image-name">Update</label>
+        <h6 className="image-name">Update</h6>
       </div>
       <div className="navbar__login">
           <div className="container">
             <img src={Avatar} id="avatar-icon" />
           </div>
-          <label htmlFor="avatar" id="avatar-id">{id}</label>
+          <h6 className="image-name">{id}</h6>
       </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-main{
+.main_slide{
     margin: 0;
     padding: 0;
     display: flex;
@@ -7,7 +7,7 @@ main{
 .slides_main{
     background-color: #F5F5F5;
     height: 89.5vh;
-    padding:0 2rem 0 2rem;
+    padding: 1rem 2rem 0 2rem;
     margin: 0;
 }
 h1{

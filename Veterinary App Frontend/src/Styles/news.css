@@ -9,7 +9,7 @@ grid-area: aside;
 }
 nav{
 grid-area: nav;
-padding-left: 3rem;
+padding-left: 1rem;
 }
 .news_header{
     padding-left: 2rem;
@@ -17,11 +17,11 @@ padding-left: 3rem;
 .news_main_holder{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    /* flex-wrap: wrap; */
     width: 98%;
-    height: 82.5vh;
+    height: 100%;
     overflow-y: scroll;
 }
 
