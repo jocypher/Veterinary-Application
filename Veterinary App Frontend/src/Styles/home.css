@@ -29,7 +29,7 @@ main{
 }
 aside{
     grid-area: aside;
-    height: 91.5vh;
+    height: 90vh;
 }
 .body main section{
     height: 100%;

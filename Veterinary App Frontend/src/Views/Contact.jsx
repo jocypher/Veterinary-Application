@@ -25,6 +25,24 @@ const Contact = () => {
     <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
     <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
     <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
+    <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
+    <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
+    <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
+    <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
+    <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
+    <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
+    <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
+    <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
+    <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
+    <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
+    <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
+    <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
+    <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
+    <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
+    <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
+    <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
+    <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
+    <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
     </div>
     </div>
     </nav>

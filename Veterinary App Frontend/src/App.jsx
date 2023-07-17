@@ -15,8 +15,8 @@ function App() {
     <>
     {/* <News title="Cure for animal cancer that kills animals discovered!" source="vmedinews.com"/> */}
     {/* <Navigation id="10950660"/> */}
-    {/* <Home/> */}
-    <News/>
+    <PastQuestion/>
+    {/* <News/> */}
     </>
     )
 }
