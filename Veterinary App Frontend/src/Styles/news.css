@@ -9,19 +9,24 @@ grid-area: aside;
 }
 nav{
 grid-area: nav;
-padding-left: 1rem;
+padding-left: 0;
+width: 70vw;
+}
+.news_holder{
+    width: 70vw;
 }
 .news_header{
     padding-left: 2rem;
 }
 .news_main_holder{
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
     justify-content: center;
-    gap: 2rem;
-    /* flex-wrap: wrap; */
-    width: 98%;
-    height: 100%;
+    place-content: space-between;
+    gap: 1rem;
+    width: 70vw;
+    height: 90vh;
     overflow-y: scroll;
 }
 

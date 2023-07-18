@@ -37,7 +37,7 @@ const Navigation = ({id, update}) => {
       </div>
       <div className="navbar__login">
           <div className="container">
-            <img src={Avatar} id="avatar-icon" />
+            <img src={Avatar} id="avatar-icon"/>
           </div>
           <h6 className="image-name">{id}</h6>
       </div>

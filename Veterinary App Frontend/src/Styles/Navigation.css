@@ -85,12 +85,37 @@
     display: flex;
     align-items: center;
     padding: 0;
+    position: relative;
 }
 
 .update__image{
     width: 2.28rem;
     height: 1.57rem;
     color: #000000;
+    cursor: pointer;
+}
+.update__image:hover{
+    animation: update-hover 0.5s ease-in infinite;
+}
+
+@keyframes update-hover{
+    30%{
+        transform: translateY(2px) rotate(-5deg);
+    }
+    70%{
+        transform: translateY(2px) rotate(5deg);
+    }
+}
+.update__image::before{
+    content: "10";
+    display: flex;
+    font-size: 0.8rem;
+    color: red;
+    background-color: #ffffffdc;
+    padding: 0;
+    font-weight: bold;
+    position: absolute;
+    margin-right: 1px;
 }
 
 img{
