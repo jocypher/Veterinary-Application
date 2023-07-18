@@ -1,7 +1,7 @@
 .past_main{
     background-color: #F5F5F5;
     height: 89.5vh;
-    padding:0 2rem 0 2rem;
+    padding:1rem 2rem 0 2rem;
     margin: 0;
     width: 90;
     display: flex;
@@ -14,6 +14,7 @@ h1{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #215EBE;
     line-height: 2.8rem;
+    padding-bottom: 5px;
     font-weight: 400;
     justify-content: flex-start;
 }
@@ -25,7 +26,7 @@ h1{
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .past_name{

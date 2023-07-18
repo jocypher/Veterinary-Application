@@ -3,7 +3,7 @@
     height: 100%;
 }
 
-.eventsMain{
+main{
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: 100%;

@@ -14,7 +14,7 @@ const Event = () => {
       <nav>
       <div className="events_main">
       <h1>Events</h1>
-      <ul className="Events_type">
+      <ul className="events_type">
           <li className="Events_name">Event</li>
           <li className="Events_name">Date</li>
       </ul>

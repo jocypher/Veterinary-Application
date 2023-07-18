@@ -5,7 +5,7 @@ import Navigation from './Components/Navigation'
 const Book = () => {
   return (
     <>
-    <main>
+    <main className='main_book'>
     <header><Navigation id="10952541"/></header>
     <div className="book_main">
     <h1>Books</h1>
@@ -13,7 +13,7 @@ const Book = () => {
         <li className="book_name">Title</li>
         <li className="book_name">Author</li>
         <li className="book_name">Page</li>
-        <li className="book_name">Year</li>
+        <li className="book_name_year">Year</li>
         <li className="book_name">Publisher</li>
     </ul>
     <div className="book_container">
