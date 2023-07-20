@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router;
+const router = express.Router();
 const { getAllContacts, createNewContact, updateContact, deleteContact, getContact } = require('../../controller/contact');
 
 router.route('/')

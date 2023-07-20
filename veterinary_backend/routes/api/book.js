@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router;
+const router = express.Router();
 const { getAllBooks, createNewBook, updateBook, deleteBook, getBook} = require('../../controller/book');
 
 router.route('/')
@@ -8,7 +8,7 @@ router.route('/')
 .put(updateBook)
 .delete(deleteBook)
 
-router.router('/:id')
+router.route('/:id')
 .get(getBook)
 
 module.exports = router;

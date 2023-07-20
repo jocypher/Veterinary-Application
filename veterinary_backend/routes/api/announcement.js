@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router;
+const router = express.Router();
 const { getAllAnnouncements, createNewAnnouncement, updateAnnouncement, deleteAnnouncement, getAnnouncement } = require('../../controller/announcement');
 
 router.route('/')
@@ -8,7 +8,7 @@ router.route('/')
 .put(updateAnnouncement)
 .delete(deleteAnnouncement)
 
-router.router('/:id')
+router.route('/:id')
 .get(getAnnouncement)
 
 module.exports = router;
