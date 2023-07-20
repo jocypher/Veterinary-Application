@@ -2,6 +2,7 @@ import SearchIcon from "../../assets/search.png"
 import UpdateIcon from "../../assets/notification.png"
 import Avatar from "../../assets/avatar.png"
 import "../../Styles/Navigation.css"
+import { Link } from "react-router-dom"
 
 const Navigation = ({id, update}) => {
   return (
@@ -14,7 +15,7 @@ const Navigation = ({id, update}) => {
         <span className="bar"></span>
       </div>
       <div className="logo">
-        <a href="/" className="logo-name">VetMed</a>
+        <Link to="/home" className="logo-name">VetMed</Link>
       </div>
       </div>
       <div className="navbar__search">

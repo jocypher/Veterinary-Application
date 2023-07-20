@@ -28,7 +28,7 @@ aside{
 
 main{
     box-sizing: border-box;
-    height: calc(100% - 7em);
+    height: calc(100% - 5em);
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-areas: "aside nav";
@@ -89,8 +89,20 @@ h3{
     overscroll-behavior-inline: contain; */
 }
 
+.resource__element{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.mediaImg{
+    position: absolute;
+}
+
 .media__element{
     background-color: #E8E9ED;
+    position: relative;
     width: 12rem;
     height: 11em;
     display: flex;
@@ -106,6 +118,8 @@ h3{
 }
 
 .title {
+    position: absolute;
+    display: none;
     font-size: 1.2rem;
     color: #4C5463;
     font-family: Verdana, Geneva, Tahoma, sans-serif;

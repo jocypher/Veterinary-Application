@@ -2,7 +2,10 @@ import img1 from "../assets/loginImg1.png"
 import img2 from "../assets/loginImg2.png"
 import img3 from "../assets/loginImg3.png"
 import "../Styles/login.css"
+import { useNavigate } from "react-router-dom"
+
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <main className="loginContainer">
     <section>
@@ -13,12 +16,12 @@ const Login = () => {
     <img src={img1} alt="Image3" className="loginimg3"/>
     </div>
     <div>
-      <p>The University of Ghana Veterinary Students <br />Resource Application</p>
+      <p className="loginMessage">The University of Ghana Veterinary Students <br />Resource Application</p>
     </div>
     </section>
 
     <section className="section2">
-    <h1 className="welcome">Welcome!</h1>
+    <h1 className="loginWelcome">Welcome!</h1>
     <form action="/">
       <div className="input_container">
         <div className="input_id">
@@ -30,7 +33,7 @@ const Login = () => {
           <input type="password" name="pin" id="std_pin" required />
         </div>
       </div>
-      <input type="Submit" id="submit_button" value="Login"/>
+      <button type="submit" id="submit_button" onClick={(e) => {e.preventDefault(); navigate('/home')}}>Login</button>
     </form>
     </section>
     </main>

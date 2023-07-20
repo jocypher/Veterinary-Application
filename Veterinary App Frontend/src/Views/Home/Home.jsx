@@ -6,7 +6,8 @@ import slides from '../../assets/slides.svg'
 import books from '../../assets/books.svg'
 import pasco from '../../assets/pasco.svg'
 import news from '../../assets/news.svg'
-
+import { Link } from "react-router-dom"
+ 
 const Home = () => {
   return (
     <>
@@ -22,36 +23,36 @@ const Home = () => {
         <h4 className="resource_name">Resources</h4>
         <div className="resource__holder">
           <div className="resource__element">
-            <a href="/" className="resource__link">
+            <Link to="/slides" className="resource__link">
               <div className="media__element">
-                <img src={slides}/>
+                <img className="mediaImg" src={slides}/>
                 <p className="title">Slides</p>
               </div>
-            </a>
+            </Link>
           </div>
           <div className="resource__element">
-          <a href="/" className="resource__link">
+          <Link to="/pastquestions" className="resource__link">
               <div className="media__element">
-                <img src={pasco}/>
+                <img className="mediaImg" src={pasco}/>
                 <p className="title">Past Questions</p>
               </div>
-              </a>
+              </Link>
           </div>
           <div className="resource__element">
-          <a href="/" className="resource__link">
+          <Link to="/books" className="resource__link">
               <div className="media__element">
-                <img src={books}/>
+                <img className="mediaImg" src={books}/>
                 <p className="title">Books</p>
               </div>
-            </a>
+            </Link>
           </div>
           <div className="resource__element">
-          <a href="/" className="resource__link">
+          <Link to="/news" className="resource__link">
               <div className="media__element">
-                <img src={news}/>
+                <img className="mediaImg" src={news}/>
                 <p className="title">News</p>
               </div>
-            </a> 
+            </Link> 
           </div>
         </div>
       </section>

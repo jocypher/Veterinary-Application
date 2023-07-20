@@ -1,15 +1,92 @@
-/* main{
+.feedbackMain{
     display: grid;
-    grid-template-columns: 1.5fr 2fr;
+    grid-template-columns: 5fr 7fr;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
 }
-section:nth-of-type(1){
-    background: linear-gradient(90deg, #3B5BC0 0%, #415FC1 100%);
+
+.designContainer{
+    position: relative;    
 }
-section:nth-of-type(2){
-    background-color: ffffff;
+
+.feedbackImg1 {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
 }
-img{
-    height: 231px;
-    width: 428px;
+
+.tellSecret {
+    position: absolute;
+    width: 78%;
+    margin: auto;
+    bottom: 0;
+    left: 3em;
 }
- */
+
+.feedbackdes {
+    position: absolute;
+    width: 45%;
+    top: 4em;
+    left: 12em;
+}
+
+.inputContainer {
+    background-color: #fff;
+}
+
+.feedbackInput {
+    margin: 6em 7em 1em 7em;
+}
+
+.command {
+    font-style: italic;
+}
+
+#feedback_input{
+    width: 40em;
+    height: 20em;
+    background-color: #F5F5F5;
+    border: none;
+}
+
+.options{
+    width: 33.5em;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.reset {
+    position: absolute;
+    right: 0;
+    padding: .7em .9em;
+    border: transparent;
+    border-radius: 9px;
+    background-color: #415FC1;
+    color: white;
+}
+
+.submit {
+    position: absolute;
+    right: 6em;
+    padding: .7em .9em;
+    border: transparent;
+    border-radius: 9px;
+    background-color: #415FC1;
+    color: white;
+}
+
+.feedbackform:nth-of-type(2) {
+    margin-top: 7em;
+}
+
+#feedback_star_input{
+    width: 40em;
+    height: 4em;
+    background-color: #F5F5F5;
+    border: none;
+}
+
+.thanks {
+    font-style: italic;
+}
