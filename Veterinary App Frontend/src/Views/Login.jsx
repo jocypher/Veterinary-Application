@@ -4,7 +4,7 @@ import img3 from "../assets/loginImg3.png"
 import "../Styles/login.css"
 const Login = () => {
   return (
-    <main>
+    <main className="loginContainer">
     <section>
     <div className="pd">Pd <strong> VetMed</strong></div>
     <div className="images">

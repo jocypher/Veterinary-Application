@@ -1,4 +1,4 @@
-main{
+.loginContainer{
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
     height: 100vh;

@@ -11,7 +11,7 @@ const Contact = () => {
       <aside><Sidebar/></aside>
       <nav>
         <div className="contact_holder">
-          <h1 className="Contact_header">Contact</h1>
+          <h1 className="Contact_header">Contacts</h1>
           <div className="contactitem">
     <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>
     <ContactItem name="Dr. E. A Obeng" location='location' office="Office Hours" email="erickobeng@gmail.com"/>

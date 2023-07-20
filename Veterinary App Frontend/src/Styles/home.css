@@ -22,14 +22,19 @@ aside{
     /* overflow-y: hidden; */
 /* } */
 
+.body{
+    height: 100vh;
+}
+
 main{
+    box-sizing: border-box;
+    height: calc(100% - 7em);
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-areas: "aside nav";
 }
 aside{
     grid-area: aside;
-    height: 90vh;
 }
 .body main section{
     height: 100%;
@@ -54,7 +59,7 @@ nav{
 h3{
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 2.5em;
     color: #215EBE;
     font-style: normal;
     font-weight: 400;
@@ -66,26 +71,28 @@ h3{
     display: flex;
     align-items: center;
     color: #374151;
-    font-size: 1.2rem;
-    margin: 3rem 0 1rem 0;
+    font-size: 1.3em;
+    margin: 3rem 0 1.7rem 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     line-height: normal;
-    font-weight: 400;
+    font-weight: 400
+
 }
 
 .resource__holder{
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 20%;
-    gap: 2rem;
-
+    gap: 2.5rem;
+    height: 12em;
     /* overflow-y: auto;
     overscroll-behavior-inline: contain; */
 }
 
 .media__element{
     background-color: #E8E9ED;
-    width: 11rem;
+    width: 12rem;
+    height: 11em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -112,20 +119,21 @@ h3{
 }
 
 h5{
-    color: #374151;
-    font-size: 1.2rem;
     display: flex;
     align-items: center;
-    font-weight: 400;
-    line-height: normal;
+    color: #4C5463;
+    font-size: 1.3em;
+    margin: .3em 0 .5em 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: normal;
+    font-weight: 400
 }
 
 .recent__name{
     width: 100%;
     display: flex;
     align-items: center;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid #374151;
     padding-bottom: 10px;
 }
 

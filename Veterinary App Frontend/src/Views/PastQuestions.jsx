@@ -3,9 +3,10 @@ import "../Styles/pastquestions.css"
 import Navigation from "./Components/Navigation"
 const Mainpast = () => {
     return (
-      <>
+      <main className="pasco">
       <header><Navigation id="10952541"/></header>
       <div className="past_main">
+      <div className="pastmain_container">
       <h1>Past Questions</h1>
       <ul className="main_type">
           <li className="past_name">Title</li>
@@ -32,7 +33,8 @@ const Mainpast = () => {
       <PastQuestionItem title="Introduction to computer organization" year="2017"/>
       </div>
       </div>
-      </>
+      </div>
+      </main>
     )
   }
   

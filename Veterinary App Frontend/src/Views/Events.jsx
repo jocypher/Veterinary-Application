@@ -3,15 +3,15 @@ import "../Styles/event.css"
 import EventItem from "./Components/EventItem"
 import Sidebar from "./Components/Sidebar"
 import Navigation from "./Components/Navigation"
-const Event = () => {
+const Events = () => {
   
   return (
     <>
-    <div className="body">
+    <div className="eventsBody">
     <Navigation id="10952541" update="There will be exams on 5th July"/>
     <main className="eventsMain">
-      <aside><Sidebar/></aside>
-      <nav>
+      <aside className="eventsAside"><Sidebar/></aside>
+      <nav className="eventsNav">
       <div className="events_main">
       <h1>Events</h1>
       <ul className="events_type">
@@ -46,4 +46,4 @@ const Event = () => {
   )
 }
 
-export default Event
+export default Events
