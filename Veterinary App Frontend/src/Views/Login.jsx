@@ -8,9 +8,9 @@ const Login = () => {
     <section>
     <div className="pd">Pd <strong> VetMed</strong></div>
     <div className="images">
-    <img src={img2} alt="Image1" />
-    <img src={img3} alt="Image2" />
-    <img src={img1} alt="Image3" />
+    <img src={img2} alt="Image1" className="loginimg1"/>
+    <img src={img3} alt="Image2" className="loginimg2"/>
+    <img src={img1} alt="Image3" className="loginimg3"/>
     </div>
     <div>
       <p>The University of Ghana Veterinary Students <br />Resource Application</p>

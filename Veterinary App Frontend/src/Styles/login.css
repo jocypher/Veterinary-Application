@@ -31,19 +31,19 @@ p{
     width: 28em;
     position: relative;
 }
-.images img:nth-of-type(1){
+.loginimg1{
     position: absolute;
     top: 7em;
     left: 14em;
     width: 150px;
 }
-.images img:nth-of-type(2){
+.loginimg2{
     position: absolute;
     left: 73.14px;
     top: 15em;
     width: 170px;
 }
-.images img:nth-of-type(3){
+.loginimg3{
     position: absolute;
     width: 150px;
     left: 8em;
