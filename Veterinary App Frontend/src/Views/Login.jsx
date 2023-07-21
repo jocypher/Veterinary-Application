@@ -8,16 +8,14 @@ const Login = () => {
   const navigate = useNavigate();
   return (
     <main className="loginContainer">
-    <section>
-    <div className="pd">Pd <strong> VetMed</strong></div>
-    <div className="images">
+    <section className="loginSection1">
+    <h1 className="pd">Pd <strong> VetMed</strong></h1>
+    <div className="vetImages">
     <img src={img2} alt="Image1" className="loginimg1"/>
     <img src={img3} alt="Image2" className="loginimg2"/>
     <img src={img1} alt="Image3" className="loginimg3"/>
     </div>
-    <div>
       <p className="loginMessage">The University of Ghana Veterinary Students <br />Resource Application</p>
-    </div>
     </section>
 
     <section className="section2">
