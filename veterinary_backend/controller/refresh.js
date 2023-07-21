@@ -6,16 +6,21 @@ const handleRefreshToken = async (req, res) => {
     const cookie = req.cookies;
     if (!cookie.jwt) {return res.status(401)};
     const refreshToken = cookie.jwt;
-    console.log(refreshToken);
     const foundUser = await User.findOne({refreshToken}).exec();
-    if (!foundUser) return res.status(401);
+    if (!foundUser) return res.status(204);
     jwt.verify(
         refreshToken,
         process.env.REFRESH_TOKEN_SECRET,
         (err, decoded) => {
-            if (err || foundUser.studentId != decoded.studentId) return res.sendStatus(403);
+            if (err) return res.sendStatus(403);
+            const roles = Object.values(foundUser.roles);
             const accessToken = jwt.sign(
-                {studentId: decoded.studentId},
+                {
+                    userInfo: {
+                        studentId: decoded.studentId,
+                        roles: roles
+                    }
+                },
                 process.env.ACCESS_TOKEN_SECRET,
                 {expiresIn: '30s'}
             )

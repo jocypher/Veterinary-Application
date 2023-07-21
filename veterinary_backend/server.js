@@ -1,3 +1,4 @@
+//To access protected routes use {"id": "10952541", "pin": "12345"}
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const verifyJWT = require('./middleware/verifyJWT');
@@ -25,6 +26,7 @@ app.use(express.urlencoded({extended: false}));
 
 app.use('/auth', require('./routes/api/auth'));
 app.use('/register', require('./routes/api/registration'));
+app.use(verifyJWT);
 app.use('/refresh', require('./routes/api/refresh'));
 app.use('/logout', require('./routes/api/logout'));
 app.use('/books', require('./routes/api/book'))
@@ -32,7 +34,6 @@ app.use('/news', require('./routes/api/news'));
 app.use('/events', require('./routes/api/event'));
 app.use('/announcements', require('./routes/api/announcement'));
 app.use('/contacts', require('./routes/api/contact'));
-app.use(verifyJWT);
 
 app.all("*", (req, res) => {
     res.status = 404;

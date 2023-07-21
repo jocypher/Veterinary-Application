@@ -12,7 +12,6 @@ const handleRegistration = async (req, res) => {
             studentId: id,
             pin: hashedPin
         });
-        console.log(result);
         res.status(201).json({message: `New user '${id}' created`})
     } catch (err) {
         res.status(500).json({message: err.message})

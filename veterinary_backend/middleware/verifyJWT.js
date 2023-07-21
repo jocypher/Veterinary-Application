@@ -1,15 +1,16 @@
 const jwt = require('jsonwebtoken');
 
-const verifyJWT = (req, res, next) => {
-    const auth = req.headers.authorization || req.headers.Authorization;
-    if (!auth) {return res.status(401).json({message: 'Unauthorized'})};
-    const token = auth.split(' ')[1];
+const verifyJWT = async (req, res, next) => {
+    const authHeader = req.headers.authorization || req.headers.Authorization;
+    if (!authHeader?.startsWith("Bearer ")) {return res.status(401).json({message: 'Unauthorized'})};
+    const token = authHeader.split(' ')[1];
     jwt.verify(
         token,
         process.env.ACCESS_TOKEN_SECRET,
-        (err, decode) => {
-           if (err || foundUser.studentId != decoded.studentId) return res.sendStatus(403);
-           req.user = decode.studentId; 
+        (err, decoded) => {
+           if (err) return res.sendStatus(403);
+           req.user = decoded.userInfo.studentId; 
+           req.roles = decoded.userInfo.roles; 
            next();
         }
     )
