@@ -10,6 +10,7 @@ const cors = require('cors');
 require('dotenv').config();
 const { reqLogger, errLogger } = require("./middleware/logEvents");
 const PORT = process.env.PORT;
+const HOST = "192.168.8.101";
 
 mongoose.set({"strictQuery": true});
 const app = express();
@@ -44,7 +45,7 @@ app.use(errLogger);
 
 mongoose.connection.once('open', () => {
     console.log("Connected to mongoDB");
-    app.listen(PORT, () => {
+    app.listen(PORT, HOST, () => {
         console.log(`Server running on port ${PORT}`);
     })
 })
