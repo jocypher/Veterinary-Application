@@ -17,7 +17,6 @@
 }
 .loginSection1{
     position: relative;
-    background-color: red;
 }
 .pd{
     font-size: 2rem;
@@ -40,7 +39,6 @@ p{
     position: relative;
     width: 100%;
     margin: 2em 0 0 2em;
-    background-color: green;
 }
 .loginimg1{
     position: absolute;
