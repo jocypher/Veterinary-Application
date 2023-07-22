@@ -68,15 +68,12 @@ const Home = () => {
           </ul>
         </div>
         <div className="recent__items">
-        <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
-        <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
-        <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
-        <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
-        <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
-        <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
-        <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
-        <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
-        <Recents name="DCIT208" type="Slides" lastOpened="20:17"/>
+        <Recents name="Vaccine for rabbies found" type="News" lastOpened="2017"/>
+        <Recents name="A cure for the dog sickness has been found" type="News" lastOpened="2019"/>
+        <Recents name="School of veterinary culture day" type="Slides" lastOpened="2019"/>
+        <Recents name="Teaching begins" type="Events" lastOpened="2018"/>
+        <Recents name="Course registration deadline" type="Events" lastOpened="2020"/>
+        <Recents name="Course Evaluation" type="Events" lastOpened="2022"/>
         </div>
       </footer>
       </nav>
