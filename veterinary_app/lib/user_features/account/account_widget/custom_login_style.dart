@@ -8,12 +8,49 @@ class TopWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return CustomPaint(
       child: ClipPath(
         clipper: TopWidgetClipper(),
         child: Container(
-          height: 370,
-          color: loginColor,
+        height: 370,
+        color: loginColor,
+        child: Stack(
+          children: [
+            Center(
+              child: Container(
+                height: height * 0.118,
+                width: width * 0.275,
+                margin: EdgeInsets.only(bottom: 50),
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(18), 
+                  bottomLeft: Radius.circular(18),
+                  bottomRight: Radius.circular(18)
+                  )
+                ),
+                child: Stack(
+                  children: [
+                    Center(
+                      child: Container(
+                                  height: height * 0.06,
+                                  width: width * 0.15,
+                                decoration: const BoxDecoration(
+                                      color: loginColor,
+                                      borderRadius: BorderRadius.only(topRight: Radius.circular(50), 
+                                      topLeft: Radius.circular(50),
+                                      bottomRight: Radius.circular(50)
+                                      )
+                                    ),
+                      ),
+                    )
+                  ]
+                  ),
+              ),
+            )
+          ],
+        )
         ),
       ),
     );

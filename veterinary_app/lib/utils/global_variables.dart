@@ -8,4 +8,4 @@ const feedbackColor = Color.fromRGBO(237, 239, 241, 1);
 const feedbackTextColor = Color.fromRGBO(133, 139, 148, 1);
 const resetColor = Color.fromRGBO(217, 217, 217, 1);
 
-String uri = 'http://192.168.8.101:3500';
+String uri = 'http://localhost:3500';

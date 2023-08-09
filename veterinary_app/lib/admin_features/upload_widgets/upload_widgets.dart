@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../utils/global_variables.dart';
 
+// ignore: must_be_immutable
 class UploadWidget extends StatefulWidget {
   final String text;
   TextEditingController textEditingController = TextEditingController();

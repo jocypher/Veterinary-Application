@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
       _isLoading = true;
     });
     }
-    await userAuthService.signIn(
+   userAuthService.signIn(
         context: context,
         id: userNameTextEditingController.text,
         pin: userPinController.text);
@@ -146,7 +146,7 @@ class _LoginPageState extends State<LoginPage> {
             },
             child: Container(
               margin: const EdgeInsets.symmetric(horizontal: 30),
-              padding: const EdgeInsets.all(25),
+              padding: const EdgeInsets.all(27),
               decoration: const BoxDecoration(
                   color: loginColor,
                   borderRadius: BorderRadius.only(
@@ -161,7 +161,7 @@ class _LoginPageState extends State<LoginPage> {
                         ))
                       : const Text(
                           "Login",
-                          style: TextStyle(color: primaryColor, fontSize: 17),
+                          style: TextStyle(color: primaryColor, fontSize: 20, fontWeight: FontWeight.w400, fontFamily: 'Poppins'),
                         )),
             ),
           )

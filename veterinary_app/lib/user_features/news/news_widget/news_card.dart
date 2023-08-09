@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+
 
 class News {
   final String headline;
@@ -18,8 +18,6 @@ class NewsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    DateTime now = DateTime.now();
-    String headlineDate = DateFormat.jm().format(now);
     return ListView.builder(
       shrinkWrap: true,
       itemCount: currentNews.length,

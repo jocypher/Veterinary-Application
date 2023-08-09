@@ -8,6 +8,7 @@ class PastQuestion {
   PastQuestion({required this.pastQuestionsTopic, required this.pastQuestionsYear});
 }
 
+// ignore: must_be_immutable
 class PastQuestionCard extends StatelessWidget {
   List<PastQuestion> currentPastQuestions;
   PastQuestionCard({
