@@ -65,7 +65,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
                           menuItem
                               .add(PopupMenuItem(child: Text(menuOptions[i])));
                           if (i < menuOptions.length - 1) {
-                            menuItem.add(PopupMenuDivider());
+                            menuItem.add(const PopupMenuDivider());
                           }
                         }
                         return menuItem;
@@ -99,7 +99,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
             ),
             Text(
               user.id,
-              style: TextStyle(
+              style: const TextStyle(
                   color: Colors.black,
                   fontSize: 13,
                   fontWeight: FontWeight.w400),
