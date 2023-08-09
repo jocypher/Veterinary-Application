@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:veterinary_app/admin_features/main_upload_page/upload_page.dart';
+import 'package:veterinary_app/user_features/account/login_page.dart';
 import '../../user_features/contacts/contact_page.dart';
 import '../../user_features/events/events_page.dart';
 import '../../user_features/faq/faq_page.dart';
@@ -7,10 +9,12 @@ import '../../user_features/home/home_page.dart';
 import '../../utils/global_variables.dart';
 
 class NavBarDrawer extends StatelessWidget {
+
   const NavBarDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
+    
     return Container(
       margin: const EdgeInsets.only(top: 110),
       child: Drawer(
@@ -76,6 +80,22 @@ class NavBarDrawer extends StatelessWidget {
               Navigator.pushNamedAndRemoveUntil(context,FeedBackPage.routeName , (route) => false);
             },
           ),
+          ListTile(
+            title: const Text('Upload',
+                style: TextStyle(color: Colors.white, fontSize: 17)),
+            onTap: () {
+              Navigator.pushNamedAndRemoveUntil(context,UploadPage.routeName , (route) => false);
+            },
+          ),
+          SizedBox(height: 50,),
+          ListTile(
+            title: const Text('LogOut',
+                style: TextStyle(color: Colors.white, fontSize: 17)),
+            onTap: () {
+              Navigator.pushNamedAndRemoveUntil(context,LoginPage.routeName , (route) => false);
+            },
+          ),
+          
         ]),
       ),
     );

@@ -32,7 +32,7 @@ class _FeedBackPageState extends State<FeedBackPage> {
                 ),
       ),
       backgroundColor: primaryColor,
-      drawer: const NavBarDrawer(),
+      drawer:  const NavBarDrawer(),
       appBar: CustomAppBar(title: "VetMed", color: Colors.white,),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal:10.0),

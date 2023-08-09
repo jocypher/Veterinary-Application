@@ -71,7 +71,12 @@ class _uploadBookPageState extends State<uploadBookPage> {
                 const SizedBox(height: 15),
                 const chooseFile(),
                 const SizedBox(height: 30),
-               uploadBtn(resetButton: resetButton)
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                    resetBtn(resetButton: resetButton,),
+                    uploadBtn()
+                   ],)
               ],
             ),
           )),

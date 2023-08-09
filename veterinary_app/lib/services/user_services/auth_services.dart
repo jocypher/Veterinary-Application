@@ -1,12 +1,13 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'dart:convert';
-import 'dart:io';
+
 import 'package:http/http.dart' as http;
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:veterinary_app/admin_features/main_upload_page/upload_page.dart';
 import 'package:veterinary_app/utils/error_handling.dart';
 import '../../provider/student.dart';
 import '../../user_features/home/home_page.dart';
@@ -81,7 +82,7 @@ import '../../utils/snackBar.dart';
 // }
 class UserAuthService{
 
-  void signIn({
+  Future<void> signIn({
     required BuildContext context,
     required String id,
     required String pin
@@ -101,9 +102,16 @@ try
       Provider.of<StudentProvider>(context, listen: false).setStudent(response.body);
 
       sharedPreferences.setString("accessToken", jsonDecode(response.body)['accessToken']);
+      print(response.body);
+      
+if(jsonDecode(response.body)['roles'][0] <= 2000){
+  Navigator.pushNamedAndRemoveUntil(context, HomePage.routeName, (route) => false);
+}else{
+  Navigator.pushNamedAndRemoveUntil(context, UploadPage.routeName, (route) => false);
+}
+  });
 
-    Navigator.pushNamedAndRemoveUntil(context, HomePage.routeName, (route) => false);
-      });
+
     
 }
 catch(err){

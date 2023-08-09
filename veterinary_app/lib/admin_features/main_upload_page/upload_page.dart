@@ -7,6 +7,7 @@ import '../upload_pastQ/upload_pastquestion.dart';
 import '../upload_slide/upload_slide_page.dart';
 
 class UploadPage extends StatefulWidget {
+  static const routeName = '/uploadPage';
   const UploadPage({super.key});
 
   @override
@@ -14,6 +15,7 @@ class UploadPage extends StatefulWidget {
 }
 
 class _UploadPageState extends State<UploadPage> {
+
   List<Widget> pages = [
     const UploadSlidePage(),
     const UploadPastQuestion(),
@@ -28,6 +30,7 @@ class _UploadPageState extends State<UploadPage> {
       _page = page;
     });
   }
+  
 
   @override
   Widget build(BuildContext context) {

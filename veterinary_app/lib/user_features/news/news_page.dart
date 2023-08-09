@@ -25,7 +25,7 @@ class _NewsPageState extends State<NewsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const NavBarDrawer(),
+      drawer:  NavBarDrawer(),
       bottomNavigationBar:Container(
         height: 40,
         width: double.infinity,

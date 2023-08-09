@@ -22,10 +22,9 @@ class ContactWidget extends StatelessWidget {
     return GridView.builder(
         shrinkWrap: true,
         scrollDirection: Axis.vertical,
-        
         itemCount: contacts.length,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          childAspectRatio: 1/.7,
+          childAspectRatio: 1/.8,
             crossAxisCount: 2),
         itemBuilder: (context, index) {
           final contact = contacts[index];

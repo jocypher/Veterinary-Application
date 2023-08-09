@@ -28,7 +28,7 @@ class _LoginPageState extends State<LoginPage> {
       _isLoading = true;
     });
     }
-   userAuthService.signIn(
+   await userAuthService.signIn(
         context: context,
         id: userNameTextEditingController.text,
         pin: userPinController.text);

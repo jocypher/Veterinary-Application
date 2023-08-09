@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:veterinary_app/admin_features/main_upload_page/upload_page.dart';
 import 'package:veterinary_app/user_features/account/login_page.dart';
 import 'package:veterinary_app/user_features/books/books_page.dart';
 import 'package:veterinary_app/user_features/contacts/contact_page.dart';
@@ -50,6 +51,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         settings: settings,
         builder: (_) =>  const FeedBackPage());
+    case UploadPage.routeName:
+      return MaterialPageRoute(
+        settings: settings,
+        builder: (_) => const UploadPage());
     default:
     return MaterialPageRoute(
         settings: settings,

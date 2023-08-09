@@ -64,9 +64,12 @@ class _UploadPastQuestionState extends State<UploadPastQuestion> {
                 const SizedBox(height: 15),
                 const chooseFile(),
                 const SizedBox(height: 100),
-                uploadBtn(
-                  resetButton: resetButton,
-                )
+                 Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                    resetBtn(resetButton: resetButton,),
+                    uploadBtn()
+                   ],)
               ],
             ),
           )),
