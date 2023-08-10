@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
@@ -77,8 +78,9 @@ Future<void> pickFile() async {
     Future<void> openSelectedFile() async {
     if (fileToDisplay != null) {
       final filePath = fileToDisplay!.path;
-       final file = File(filePath);
-      final content = await file.readAsString();
+      var encryptedBase64EncodedString = await new File(filePath).readAsString(encoding:utf8);
+        var decoded = base64.decode(encryptedBase64EncodedString);
+
       
     }
   }
