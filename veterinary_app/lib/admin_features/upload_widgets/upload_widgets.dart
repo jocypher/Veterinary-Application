@@ -170,7 +170,7 @@ class _uploadBtnState extends State<uploadBtn> {
 
   void uploadSlide() {
     final selectedFilePath = Provider.of<SelectedFileProvider>(context, listen: false).filePath;
-    if (_uploadSlideKey.currentState!.validate() && selectedFilePath != null) {
+    if (selectedFilePath != null) {
       uploadInfos.UploadSlides(
         context: context,
         title: titleTextEditingController.text,
