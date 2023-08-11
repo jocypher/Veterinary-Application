@@ -3,7 +3,6 @@ import '../../common/widgets/custom_app_bar.dart';
 import '../../common/widgets/custom_heading.dart';
 import '../../common/widgets/custom_search_box.dart';
 import '../../common/widgets/nav_bar.dart';
-import '../../services/user_services/auth_services.dart';
 import '../../utils/global_variables.dart';
 import 'home_widget/custom_recently_viewed.dart';
 import 'home_widget/custom_resource.dart';
@@ -18,7 +17,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  UserAuthService userAuthService = UserAuthService();
+
   final TextEditingController searchTextEditingController =
       TextEditingController();
 

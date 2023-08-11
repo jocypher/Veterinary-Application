@@ -2,6 +2,7 @@
 
 import 'dart:convert';
 
+import 'package:dio/dio.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:flutter/material.dart';
@@ -80,45 +81,68 @@ import '../../utils/snackBar.dart';
 //     }
 //   }
 // }
-class UserAuthService{
+// class UserAuthService{
 
-  Future<void> signIn({
-    required BuildContext context,
-    required String id,
-    required String pin
-}) async{
-try
-{
-    http.Response response = await http.post(Uri.parse("$uri/auth",), 
-    headers: <String, String> {'Content-Type': 'application/json; charset=UTF-8'},
-    body: jsonEncode({'id' : id, 'pin': pin}));
+//   Future<void> signIn({
+//     required BuildContext context,
+//     required String id,
+//     required String pin
+// }) async{
+// try
+// {
+//     http.Response response = await http.post(Uri.parse("$uri/auth",), 
+//     headers: <String, String> {'Content-Type': 'application/json; charset=UTF-8'},
+//     body: jsonEncode({'id' : id, 'pin': pin}));
 
-    httpErrorHandle(
-      response: response, 
-      context: context, 
-      success: () async{
-        // stored the access token with the storage shared Preferences
-      SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-      Provider.of<StudentProvider>(context, listen: false).setStudent(response.body);
+//     httpErrorHandle(
+//       response: response, 
+//       context: context, 
+//       success: () async{
+//         // stored the access token with the storage shared Preferences
+//       SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+//       Provider.of<StudentProvider>(context, listen: false).setStudent(response.body);
 
-      sharedPreferences.setString("accessToken", jsonDecode(response.body)['accessToken']);
-      print(response.body);
+//       sharedPreferences.setString("accessToken", jsonDecode(response.body)['accessToken']);
+//       print(response.body);
       
-if(jsonDecode(response.body)['roles'][0] <= 2000){
-  Navigator.pushNamedAndRemoveUntil(context, HomePage.routeName, (route) => false);
-}else{
-  Navigator.pushNamedAndRemoveUntil(context, UploadPage.routeName, (route) => false);
-}
-  });
+// if(jsonDecode(response.body)['roles'][0] <= 2000){
+//   Navigator.pushNamedAndRemoveUntil(context, HomePage.routeName, (route) => false);
+// }else{
+//   Navigator.pushNamedAndRemoveUntil(context, UploadPage.routeName, (route) => false);
+// }
+//   });
 
 
     
-}
-catch(err){
-  SnackBarGlobal.showSnackBar(context, err.toString());
-}
-  }
+// }
+// catch(err){
+//   SnackBarGlobal.showSnackBar(context, err.toString());
+// }
+//   }
 
 
 
-}
+// }
+
+// class UserAuthService{
+
+//   void signIn({required BuildContext context ,required id, required pin })async{
+//     Dio dio = Dio();
+//     dio.options.receiveTimeout = const Duration(seconds: 20);
+//     dio.options.connectTimeout = const Duration(seconds: 20);
+
+//     try
+//     {
+//       Response response  = await dio.post("$uri/auth", 
+//       data: jsonEncode({'id': id, 'pin': pin}));
+//       if(response.statusCode == 200){
+//         print(response.data);
+//       }
+
+//     }
+//     catch(err)
+//     {
+
+//     }
+//   }
+// }

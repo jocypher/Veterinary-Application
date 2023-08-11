@@ -4,7 +4,7 @@ import '../model/student.dart';
 
 class StudentProvider extends ChangeNotifier {
   Student _student =
-      Student(id: "", pin: "", type: "", accessToken: "");
+      Student(id: "", pin: "", roles: [], accessToken: "");
 
   Student get student => _student;
   void setStudent(String student) {

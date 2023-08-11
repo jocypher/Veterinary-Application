@@ -3,21 +3,21 @@ import 'dart:convert';
 class Student {
   final String id;
   final String pin;
-  final String type;
+  final List roles;
   final String accessToken;
 
   Student(
       {required this.id,
       required this.pin,
-      required this.type,
+      required this.roles,
       required this.accessToken});
 
   Map<String, dynamic> toMap() {
     return {
       'id': id,
       'pin': pin,
-      'type': type,
-      'accesToken': accessToken,
+      'roles': roles,
+      'accessToken': accessToken,
 
     };
   }
@@ -26,7 +26,7 @@ class Student {
     return Student(
         id: map['id'] ?? '',
         pin: map['pin'] ?? '',
-        type: map['type'] ?? '',
+        roles: List<dynamic>.from(map['roles'] ?? []),
         accessToken: map['accessToken'] ?? '');
   }
   String toJson() => json.encode(toMap());

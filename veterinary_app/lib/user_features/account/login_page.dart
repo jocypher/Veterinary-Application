@@ -1,4 +1,13 @@
+import 'dart:convert';
+
+import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:veterinary_app/user_features/home/home_page.dart';
+import 'package:veterinary_app/utils/snackBar.dart';
+import '../../provider/student.dart';
 import '../../services/user_services/auth_services.dart';
 import '../../utils/global_variables.dart';
 
@@ -14,13 +23,31 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  SharedPreferences? sharedPreferences;
   TextEditingController userNameTextEditingController = TextEditingController();
   TextEditingController userPinController = TextEditingController();
-  UserAuthService userAuthService = UserAuthService();
+  // UserAuthService userAuthService = UserAuthService();
   final _loginFormKey = GlobalKey<FormState>();
   bool _isLoading = false;
+  bool _isUserLoggedIn = false;
+  String? accessToken;
+  bool _mounted = true;
 
- 
+ @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async{ 
+     sharedPreferences = await SharedPreferences.getInstance();
+      var accessToken =  sharedPreferences!.getString('accessToken');
+      print(accessToken);
+      if(accessToken != null){ 
+        _isUserLoggedIn = true;
+        getRefreshToken();
+        }
+
+    });
+  }
 
   void signInUser() async {
     if(mounted){
@@ -28,7 +55,7 @@ class _LoginPageState extends State<LoginPage> {
       _isLoading = true;
     });
     }
-   await userAuthService.signIn(
+   await login(
         context: context,
         id: userNameTextEditingController.text,
         pin: userPinController.text);
@@ -41,6 +68,7 @@ class _LoginPageState extends State<LoginPage> {
 
    @override
   void dispose() {
+    _mounted = false;
     super.dispose();
     userNameTextEditingController.dispose();
     userPinController.dispose();
@@ -138,13 +166,15 @@ class _LoginPageState extends State<LoginPage> {
           const SizedBox(
             height: 30,
           ),
-          GestureDetector(
+          (_isUserLoggedIn == true)? GestureDetector(
             onTap: () {
               if (_loginFormKey.currentState!.validate()) {
+                 
                 signInUser();
+                
               }
             },
-            child: Container(
+            child:  Container(
               margin: const EdgeInsets.symmetric(horizontal: 30),
               padding: const EdgeInsets.all(27),
               decoration: const BoxDecoration(
@@ -163,10 +193,86 @@ class _LoginPageState extends State<LoginPage> {
                           "Login",
                           style: TextStyle(color: primaryColor, fontSize: 20, fontWeight: FontWeight.w400, fontFamily: 'Poppins'),
                         )),
-            ),
-          )
+            )
+          ): Column(children: [
+              MaterialButton(
+                color: Colors.blue,
+                child: Text('Logout'),
+                onPressed: (){
+                  sharedPreferences!.remove('accessToken');
+                  setState(() {
+                    _isUserLoggedIn == false; 
+                  });
+                }),
+                 MaterialButton(
+                color: Colors.blue,
+                child: Text('Load Data'),
+                onPressed: () => getRefreshToken() )
+            ],),
         ]),
       ),
     );
   }
+   login({
+    required BuildContext context,
+    required pin,
+    required id
+  }) async{
+    if(kDebugMode){
+    print("Student Id : ${userNameTextEditingController.text}");
+    print("Student Pin: ${userPinController.text}");
+    }
+    Dio dio = Dio();
+    dio.options.connectTimeout = const Duration(seconds: 20);
+    dio.options.receiveTimeout = const Duration(seconds: 20);
+
+    try{
+       Response response  = await dio.post("$uri/auth", 
+      data: jsonEncode({'id': id, 'pin': pin}));
+  if(response.statusCode ==200){
+        var responseData = response.data as Map<String, dynamic>;
+        String jsonData = jsonEncode(responseData);
+        Provider.of<StudentProvider>(context, listen: false).setStudent(jsonData);
+    await sharedPreferences!.setString('accessToken', responseData['accessToken']);
+    setState(() {
+      _isUserLoggedIn == true;
+    });
+      print(responseData['accessToken']);
+    Navigator.pushNamedAndRemoveUntil(context, HomePage.routeName, (route) => false);
+  }else{
+
+  }
+      
+      
+    }on DioException catch(err){
+      SnackBarGlobal.showSnackBar(context, err.toString());
+    }
 }
+
+  void getRefreshToken() async{
+     Dio dio = Dio();
+    dio.options.connectTimeout = const Duration(seconds: 20);
+    dio.options.receiveTimeout = const Duration(seconds: 20);
+    dio.options.headers['content-Type'] = 'application/json';
+    dio.options.headers['Authorization'] = 'Bearer $accessToken';
+
+    try{
+      if(_mounted){
+           Response response  = await dio.get("$uri/refresh");
+          if(response.statusCode ==200){
+            print(response.data);
+  }   else{
+
+  }
+      }
+      
+      
+      
+    }on DioException catch(err){
+      if(_mounted){
+      SnackBarGlobal.showSnackBar(context, {err.response!.data}.toString());
+      }
+    }
+  }
+}
+
