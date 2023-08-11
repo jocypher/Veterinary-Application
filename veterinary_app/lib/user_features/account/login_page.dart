@@ -8,7 +8,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:veterinary_app/user_features/home/home_page.dart';
 import 'package:veterinary_app/utils/snackBar.dart';
 import '../../provider/student.dart';
-import '../../services/user_services/auth_services.dart';
 import '../../utils/global_variables.dart';
 
 import 'account_widget/custom_form.dart';

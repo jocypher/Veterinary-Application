@@ -60,7 +60,7 @@ class _UploadSlidePageState extends State<UploadSlidePage> {
                   const SizedBox(height: 30,),
                   UploadWidget(text: "Title: ", textEditingController: titleTextEditingController),
                   const SizedBox(height: 15),
-                  const chooseFile(),
+                  const ChooseFile(),
                   const SizedBox(height: 200),
                     Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

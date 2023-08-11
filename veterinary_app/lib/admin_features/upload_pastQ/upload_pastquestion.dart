@@ -62,7 +62,7 @@ class _UploadPastQuestionState extends State<UploadPastQuestion> {
                     text: "Year: ",
                     textEditingController: yearTextEditingController),
                 const SizedBox(height: 15),
-                const chooseFile(),
+                const ChooseFile(),
                 const SizedBox(height: 100),
                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

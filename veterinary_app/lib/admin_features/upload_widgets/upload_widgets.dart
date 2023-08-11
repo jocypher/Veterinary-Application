@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:veterinary_app/provider/selectedFileProvider.dart';
@@ -50,14 +51,14 @@ class _UploadWidgetState extends State<UploadWidget> {
   }
 }
 
-class chooseFile extends StatefulWidget {
-  const chooseFile({super.key});
+class ChooseFile extends StatefulWidget {
+  const ChooseFile({super.key});
 
   @override
-  State<chooseFile> createState() => _chooseFileState();
+  State<ChooseFile> createState() => _ChooseFileState();
 }
 
-class _chooseFileState extends State<chooseFile> {
+class _ChooseFileState extends State<ChooseFile> {
   File? fileToDisplay;
     
 Future<void> pickFile() async {
@@ -69,13 +70,10 @@ Future<void> pickFile() async {
       });
       // ignore: use_build_context_synchronously
       Provider.of<SelectedFileProvider>(context, listen: false).updateFilePath(file.path!);
-      print(file.name);
-      print(file.path);
-    }
-  }
-    Future<void> openSelectedFile() async {
-    if (fileToDisplay != null) {
-
+      if(kDebugMode){
+        print(file.name);
+        print(file.path);
+      }
       
     }
   }
@@ -95,18 +93,14 @@ Future<void> pickFile() async {
           children: [
             Expanded(
               flex: 2,
-              child: GestureDetector(
-                 onTap: openSelectedFile
-                ,
-                child: Container(
-                  height: 49,
-                  decoration: const BoxDecoration(
-                    color: Color.fromRGBO(232, 233, 237, 1),
-                  ),
-                  child: fileToDisplay != null
-                      ? Text(fileToDisplay.toString())
-                      : const Icon(Icons.file_copy),
+              child: Container(
+                height: 49,
+                decoration: const BoxDecoration(
+                  color: Color.fromRGBO(232, 233, 237, 1),
                 ),
+                child: fileToDisplay != null
+                    ? Text(fileToDisplay.toString())
+                    : null,
               ),
             ),
             Expanded(
@@ -159,7 +153,6 @@ class _uploadBtnState extends State<uploadBtn> {
   final TextEditingController titleTextEditingController =
       TextEditingController();
     String? slideFile;
-  final _uploadSlideKey = GlobalKey<FormState>();
   final uploadInfos = UploadInformation();
 
 

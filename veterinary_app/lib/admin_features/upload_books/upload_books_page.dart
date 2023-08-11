@@ -69,7 +69,7 @@ class _uploadBookPageState extends State<uploadBookPage> {
                     text: "Pages: ",
                     textEditingController: pagesTextEditingController),
                 const SizedBox(height: 15),
-                const chooseFile(),
+                const ChooseFile(),
                 const SizedBox(height: 30),
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
