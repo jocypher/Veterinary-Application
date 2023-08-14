@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
@@ -28,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
   // UserAuthService userAuthService = UserAuthService();
   final _loginFormKey = GlobalKey<FormState>();
   bool _isLoading = false;
-  bool _isUserLoggedIn = false;
+  
   String? accessToken;
   bool _mounted = true;
 
@@ -39,9 +41,8 @@ class _LoginPageState extends State<LoginPage> {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async{ 
      sharedPreferences = await SharedPreferences.getInstance();
       var accessToken =  sharedPreferences!.getString('accessToken');
-      print(accessToken);
       if(accessToken != null){ 
-        _isUserLoggedIn = true;
+        isUserLoggedIn = true;
         getRefreshToken();
         }
 
@@ -165,7 +166,7 @@ class _LoginPageState extends State<LoginPage> {
           const SizedBox(
             height: 30,
           ),
-          (_isUserLoggedIn == true)? GestureDetector(
+          (isUserLoggedIn == false)? GestureDetector(
             onTap: () {
               if (_loginFormKey.currentState!.validate()) {
                  
@@ -194,15 +195,6 @@ class _LoginPageState extends State<LoginPage> {
                         )),
             )
           ): Column(children: [
-              MaterialButton(
-                color: Colors.blue,
-                child: Text('Logout'),
-                onPressed: (){
-                  sharedPreferences!.remove('accessToken');
-                  setState(() {
-                    _isUserLoggedIn == false; 
-                  });
-                }),
                  MaterialButton(
                 color: Colors.blue,
                 child: Text('Load Data'),
@@ -233,9 +225,12 @@ class _LoginPageState extends State<LoginPage> {
         String jsonData = jsonEncode(responseData);
         Provider.of<StudentProvider>(context, listen: false).setStudent(jsonData);
     await sharedPreferences!.setString('accessToken', responseData['accessToken']);
-    setState(() {
-      _isUserLoggedIn == true;
+    if(mounted){
+        setState(() {
+      isUserLoggedIn == true;
     });
+    }
+    
       print(responseData['accessToken']);
     Navigator.pushNamedAndRemoveUntil(context, HomePage.routeName, (route) => false);
   }else{

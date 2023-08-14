@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../../provider/student.dart';
 import '../../user_features/home/home_page.dart';
 
@@ -37,6 +36,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
       elevation: 0,
       title: GestureDetector(
         onTap: () {
+          
           Navigator.pushNamedAndRemoveUntil(
               context, HomePage.routeName, (route) => false);
         },

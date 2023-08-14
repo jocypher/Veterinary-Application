@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:veterinary_app/admin_features/main_upload_page/upload_page.dart';
 import 'package:veterinary_app/user_features/account/login_page.dart';
 import '../../user_features/contacts/contact_page.dart';
@@ -8,10 +9,16 @@ import '../../user_features/feedback/feedback_page.dart';
 import '../../user_features/home/home_page.dart';
 import '../../utils/global_variables.dart';
 
-class NavBarDrawer extends StatelessWidget {
+class NavBarDrawer extends StatefulWidget {
 
   const NavBarDrawer({super.key});
 
+  @override
+  State<NavBarDrawer> createState() => _NavBarDrawerState();
+}
+
+class _NavBarDrawerState extends State<NavBarDrawer> {
+   SharedPreferences? sharedPreferences;
   @override
   Widget build(BuildContext context) {
     
@@ -89,8 +96,19 @@ class NavBarDrawer extends StatelessWidget {
           ),
           SizedBox(height: 50,),
           ListTile(
-            title: const Text('LogOut',
-                style: TextStyle(color: Colors.white, fontSize: 17)),
+            title: GestureDetector(
+              onTap: () {
+                if(sharedPreferences != null){
+                    sharedPreferences!.remove('accessToken');
+                    setState(() {
+                    isUserLoggedIn == false; 
+                  });
+                }
+                  
+              },
+              child: const Text('Log Out',
+                  style: TextStyle(color: Colors.white, fontSize: 17)),
+            ),
             onTap: () {
               Navigator.pushNamedAndRemoveUntil(context,LoginPage.routeName , (route) => false);
             },

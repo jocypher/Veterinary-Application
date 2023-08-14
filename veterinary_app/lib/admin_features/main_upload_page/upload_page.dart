@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:veterinary_app/admin_features/upload_contact/upload_contact_page.dart';
+import 'package:veterinary_app/admin_features/upload_events/upload_events.dart';
+import 'package:veterinary_app/admin_features/upload_news/upload_news.dart';
 import '../../common/widgets/custom_app_bar.dart';
 import '../../common/widgets/custom_heading.dart';
 import '../../utils/global_variables.dart';
@@ -20,9 +23,9 @@ class _UploadPageState extends State<UploadPage> {
     const UploadSlidePage(),
     const UploadPastQuestion(),
     const uploadBookPage(),
-    const Text('Upload News Page'),
-    const Text('Upload Events Page'),
-    const Text('Upload Contacts Page'),
+    const uploadNewsPage(),
+    const uploadEventPage(),
+    const uploadContactPage(),
   ];
   int _page = 0;
   void updatePage(int page) {

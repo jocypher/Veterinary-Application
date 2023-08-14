@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:veterinary_app/admin_features/models/booksModel.dart';
-import 'package:veterinary_app/admin_features/models/slideModel.dart';
+import 'package:veterinary_app/admin_features/models/slide_model.dart';
 import 'package:veterinary_app/provider/student.dart';
 import 'package:http/http.dart' as http;
 import 'package:veterinary_app/utils/snackBar.dart';

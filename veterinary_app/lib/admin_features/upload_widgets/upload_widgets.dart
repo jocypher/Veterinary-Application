@@ -185,3 +185,46 @@ class _uploadBtnState extends State<uploadBtn> {
     );
   }
 }
+
+// ignore: must_be_immutable
+class LinkFormBox extends StatefulWidget {
+  final String text;
+  TextEditingController textEditingController = TextEditingController();
+
+  LinkFormBox(
+      {super.key, required this.textEditingController, required this.text});
+
+  @override
+  State<LinkFormBox> createState() => _LinkFormBoxState();
+}
+
+class _LinkFormBoxState extends State<LinkFormBox> {
+  void resetTextField() {
+    setState(() {
+      widget.textEditingController.text = '';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(widget.text),
+        const SizedBox(
+          height: 10,
+        ),
+        Container(
+          padding: const EdgeInsets.only(left: 10),
+          decoration:
+              const BoxDecoration(color: Color.fromRGBO(232, 233, 237, 1)),
+          child: TextField(
+              controller: widget.textEditingController,
+              decoration: const InputDecoration(
+                border: InputBorder.none,
+              )),
+        ),
+      ],
+    );
+  }
+}

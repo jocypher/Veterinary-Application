@@ -19,6 +19,8 @@ class _uploadBookPageState extends State<uploadBookPage> {
       TextEditingController();
   final TextEditingController pagesTextEditingController =
       TextEditingController();
+      final TextEditingController linkTextEditingController =
+      TextEditingController();
 
   @override
   void dispose() {
@@ -26,12 +28,14 @@ class _uploadBookPageState extends State<uploadBookPage> {
     titleTextEditingController.dispose();
     authorTextEditingController.dispose();
     pagesTextEditingController.dispose();
+    linkTextEditingController.dispose();
   }
 
   void resetButton(){
     titleTextEditingController.text = '';
     authorTextEditingController.text = '';
     pagesTextEditingController.text = '';
+    linkTextEditingController.text = '';
   }
 
   @override
@@ -69,13 +73,13 @@ class _uploadBookPageState extends State<uploadBookPage> {
                     text: "Pages: ",
                     textEditingController: pagesTextEditingController),
                 const SizedBox(height: 15),
-                const ChooseFile(),
+               LinkFormBox(textEditingController: linkTextEditingController, text: "Upload Link"),
                 const SizedBox(height: 30),
                 Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                     resetBtn(resetButton: resetButton,),
-                    uploadBtn()
+                 const uploadBtn()
                    ],)
               ],
             ),
