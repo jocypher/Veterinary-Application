@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:veterinary_app/admin_features/main_upload_page/upload_page.dart';
 import 'package:veterinary_app/user_features/account/login_page.dart';
 import '../../user_features/contacts/contact_page.dart';
@@ -18,7 +19,15 @@ class NavBarDrawer extends StatefulWidget {
 }
 
 class _NavBarDrawerState extends State<NavBarDrawer> {
+  final Uri _url = Uri.parse("https://balme.ug.edu.gh");
    SharedPreferences? sharedPreferences;
+
+   void _launchUrl() async{
+    if(!await launchUrl(_url)){
+      throw Exception ('oohps page not found $_url');
+    }
+      
+}
   @override
   Widget build(BuildContext context) {
     
@@ -46,9 +55,12 @@ class _NavBarDrawerState extends State<NavBarDrawer> {
             },
           ),
           ListTile(
-            title: const Text(
-              'Ug Library',
-              style: TextStyle(color: Colors.white, fontSize: 17),
+            title: GestureDetector(
+              onTap: _launchUrl,
+              child: const Text(
+                'Ug Library',
+                style: TextStyle(color: Colors.white, fontSize: 17),
+              ),
             ),
             onTap: () {},
           ),
@@ -110,7 +122,7 @@ class _NavBarDrawerState extends State<NavBarDrawer> {
                   style: TextStyle(color: Colors.white, fontSize: 17)),
             ),
             onTap: () {
-              Navigator.pushNamedAndRemoveUntil(context,LoginPage.routeName , (route) => false);
+              Navigator.pushReplacementNamed(context,LoginPage.routeName);
             },
           ),
           
@@ -119,3 +131,4 @@ class _NavBarDrawerState extends State<NavBarDrawer> {
     );
   }
 }
+
