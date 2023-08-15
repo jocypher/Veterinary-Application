@@ -74,20 +74,20 @@ var accessToken;
 
  Future<void> verifyRefreshToken({required BuildContext context}) async {
      accessToken = sharedPreferences!.get('accessToken');
-    http.Response response = await http.post(Uri.parse('$uri/refresh'), 
+    http.Response refreshResponse = await http.get(Uri.parse('$uri/refresh'), 
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
       'Authorization': 'Bearer $accessToken'
     });
-    print(response.body);
+    print(refreshResponse.body);
   try{
     httpErrorHandle(
-      response: response, 
+      response: refreshResponse, 
       context: context, 
       success: ()async{
         sharedPreferences = await SharedPreferences.getInstance();
-        accessToken = sharedPreferences!.setString('accessToken', jsonDecode(response.body)['refreshToken']);
-         Provider.of<StudentProvider>(context, listen: false).setStudent(response.body);
+        accessToken = sharedPreferences!.setString('accessToken', jsonDecode(refreshResponse.body)['refreshToken']);
+         Provider.of<StudentProvider>(context, listen: false).setStudent(refreshResponse.body);
     });
 
   }
