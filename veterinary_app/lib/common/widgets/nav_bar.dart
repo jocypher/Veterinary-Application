@@ -108,7 +108,7 @@ class _NavBarDrawerState extends State<NavBarDrawer> {
               Navigator.pushNamedAndRemoveUntil(context,UploadPage.routeName , (route) => false);
             },
           ),
-          SizedBox(height: 50,),
+          const SizedBox(height: 50,),
           ListTile(
             title: GestureDetector(
               child: const Text('Log Out',
