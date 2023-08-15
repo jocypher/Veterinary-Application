@@ -204,11 +204,17 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+
+
+
+
    login({
     required BuildContext context,
     required pin,
     required id
   }) async{
+
+
     if(kDebugMode){
     print("Student Id : ${userNameTextEditingController.text}");
     print("Student Pin: ${userPinController.text}");
@@ -256,7 +262,7 @@ class _LoginPageState extends State<LoginPage> {
           if(response.statusCode ==200){
             print(response.data);
   }   else{
-
+      SnackBarGlobal.showSnackBar(context, "an error occurred");
   }
       }
       
