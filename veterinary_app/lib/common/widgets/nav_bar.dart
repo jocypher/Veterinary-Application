@@ -115,7 +115,6 @@ class _NavBarDrawerState extends State<NavBarDrawer> {
                   style: TextStyle(color: Colors.white, fontSize: 17)),
             ),
             onTap: () {
-              userAuthService.logOut();
               Navigator.pushReplacementNamed(context,LoginPage.routeName);
             },
           ),
