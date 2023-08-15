@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:veterinary_app/admin_features/main_upload_page/upload_page.dart';
+import 'package:veterinary_app/services/user_services/auth_services.dart';
 import 'package:veterinary_app/user_features/account/login_page.dart';
 import '../../user_features/contacts/contact_page.dart';
 import '../../user_features/events/events_page.dart';
@@ -20,7 +21,8 @@ class NavBarDrawer extends StatefulWidget {
 
 class _NavBarDrawerState extends State<NavBarDrawer> {
   final Uri _url = Uri.parse("https://balme.ug.edu.gh");
-   SharedPreferences? sharedPreferences;
+  UserAuthService userAuthService = UserAuthService();
+
 
    void _launchUrl() async{
     if(!await launchUrl(_url)){
@@ -109,19 +111,11 @@ class _NavBarDrawerState extends State<NavBarDrawer> {
           SizedBox(height: 50,),
           ListTile(
             title: GestureDetector(
-              onTap: () {
-                if(sharedPreferences != null){
-                    sharedPreferences!.remove('accessToken');
-                    setState(() {
-                    isUserLoggedIn == false; 
-                  });
-                }
-                  
-              },
               child: const Text('Log Out',
                   style: TextStyle(color: Colors.white, fontSize: 17)),
             ),
             onTap: () {
+              userAuthService.logOut();
               Navigator.pushReplacementNamed(context,LoginPage.routeName);
             },
           ),

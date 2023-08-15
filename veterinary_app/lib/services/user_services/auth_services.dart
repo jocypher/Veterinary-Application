@@ -15,7 +15,8 @@ import 'package:veterinary_app/utils/global_variables.dart';
 import 'package:veterinary_app/utils/snackBar.dart';
 import 'package:http/http.dart' as http;
 class UserAuthService{
-
+SharedPreferences? sharedPreferences;
+var accessToken;
 
   Future<void> signInUser({
     required BuildContext context,
@@ -41,12 +42,17 @@ class UserAuthService{
         httpErrorHandle(response: response, 
         context: context, 
         success: () async{
-             SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-            sharedPreferences.setString('accessToken', responseData['accessToken']);
+            sharedPreferences = await SharedPreferences.getInstance();
+            if(!isAccessTokenExpired(accessToken)){
+              sharedPreferences!.setString('accessToken', responseData['accessToken']);
             // using the provider to set the student to the specific user
             Provider.of<StudentProvider>(context, listen: false).setStudent(response.body);
           // navigate to the home page if login is successful
             Navigator.pushNamedAndRemoveUntil(context, HomePage.routeName, (route) => false);
+            }else{
+              await verifyRefreshToken(context: context);
+            }
+           
         });
         if(kDebugMode){
           print(responseData);
@@ -66,4 +72,59 @@ class UserAuthService{
   }
 
 
+ Future<void> verifyRefreshToken({required BuildContext context}) async {
+     accessToken = sharedPreferences!.get('accessToken');
+    http.Response response = await http.post(Uri.parse('$uri/refresh'), 
+    headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+      'Authorization': 'Bearer $accessToken'
+    });
+    print(response.body);
+  try{
+    httpErrorHandle(
+      response: response, 
+      context: context, 
+      success: ()async{
+        sharedPreferences = await SharedPreferences.getInstance();
+        accessToken = sharedPreferences!.setString('accessToken', jsonDecode(response.body)['refreshToken']);
+         Provider.of<StudentProvider>(context, listen: false).setStudent(response.body);
+    });
+
+  }
+  catch(err){
+    SnackBarGlobal.showSnackBar(context, err.toString());
+  }
+ }
+
+
+bool isAccessTokenExpired(accessToken) {
+  try {
+    final parts = accessToken.split('.');
+    if (parts.length != 3) {
+      // Invalid token format
+      return true;
+    }
+    
+    final payload = jsonDecode(utf8.decode(base64Url.decode(base64Url.normalize(parts[1])))) as Map<String, dynamic>;
+    if (payload.containsKey('exp')) {
+      final expirationTimestamp = payload['exp'] as int;
+      final currentTimeInSeconds = DateTime.now().millisecondsSinceEpoch ~/ 1000;
+      return currentTimeInSeconds >= expirationTimestamp;
+    }
+    
+    return true; // If 'exp' claim is not present, consider the token as expired
+  } catch (e) {
+    return true; // Error while decoding or parsing token
+  }
+}
+
+Future<void> logOut() async{
+  if(accessToken != null){
+    sharedPreferences!.remove('accessToken');
+  }else{
+    //do nothing
+  }
+  
+
+}
 }
