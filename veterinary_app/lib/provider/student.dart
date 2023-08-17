@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../model/student.dart';
 
 class StudentProvider extends ChangeNotifier {

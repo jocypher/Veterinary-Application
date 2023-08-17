@@ -34,6 +34,7 @@ SharedPreferences? sharedPreferences;
     headers: <String, String>{'Content-Type': 'application/json; charset=UTF-8',},);
 
     final responseData = jsonDecode(response.body);
+    print(responseData['accessToken']);
     try
     {
       if(response.statusCode == 200)
@@ -44,6 +45,7 @@ SharedPreferences? sharedPreferences;
         success: () async{
             sharedPreferences = await SharedPreferences.getInstance();
               sharedPreferences!.setString('accessToken', responseData['accessToken']);
+              sharedPreferences!.setString("studentData", response.body);
             // using the provider to set the student to the specific user
             Provider.of<StudentProvider>(context, listen: false).setStudent(response.body);
           // navigate to the home page if login is successful
@@ -123,7 +125,7 @@ SharedPreferences? sharedPreferences;
 //     //do nothing
 //   }
 
-void getUserData(
+Future getUserData(
     BuildContext context,
   ) async {
     try {

@@ -2,12 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:veterinary_app/provider/selectedFileProvider.dart';
 import 'package:veterinary_app/provider/student.dart';
 import 'package:veterinary_app/router_generator.dart';
 import 'package:veterinary_app/services/user_services/auth_services.dart';
 import 'package:veterinary_app/user_features/account/login_page.dart';
 import 'package:veterinary_app/user_features/home/home_page.dart';
+import 'package:veterinary_app/user_features/splash_page.dart';
 import 'package:veterinary_app/utils/snackBar.dart';
 
 import 'model/student.dart';
@@ -16,7 +18,6 @@ void main() {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => SelectedFileProvider()),
     ChangeNotifierProvider(create: (context) => StudentProvider()),
-
   ], child: const MyApp()));
 }
 
@@ -37,16 +38,19 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    Student? student = Provider.of<StudentProvider>(context).student;
 
-    // Check if student and accessToken are not null and not empty
-    bool isAuthenticated = student.accessToken.isNotEmpty;
+    
     return MaterialApp(
       scaffoldMessengerKey: SnackBarGlobal.key,
       title: 'Veterinary Application',
       debugShowCheckedModeBanner: false,
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: isAuthenticated ? const HomePage() : const LoginPage(),
+      home: LoadingPage(),
     );
   }
 }
+
+
+
+
+
