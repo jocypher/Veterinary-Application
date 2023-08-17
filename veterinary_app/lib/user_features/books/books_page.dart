@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:veterinary_app/common/widgets/nav_bar.dart';
+import 'package:veterinary_app/model/books.dart';
 
 
 import '../../common/widgets/custom_app_bar.dart';
@@ -17,6 +19,26 @@ class BooksPage extends StatefulWidget {
 
 class _BooksPageState extends State<BooksPage> {
   final TextEditingController _bookSearchController = TextEditingController();
+  List<Books> booksCategory = List<Books>.empty(growable: true);
+  bool _isLoading = true;
+
+
+@override
+  void initState() {
+    super.initState();
+    getBooks();
+  }
+
+
+  getBooks() async{
+  BooksApi booksApi = BooksApi();
+  await booksApi.getBooks();
+  booksCategory = booksApi.books;
+  // print("Number of books fetched: ${booksApi.books.length}");
+  setState(() {
+    _isLoading = false;
+  });
+}
 
   @override
   void dispose() {
@@ -24,63 +46,15 @@ class _BooksPageState extends State<BooksPage> {
     super.dispose();
   }
 
-  List<Books> books = [
-    Books(
-        bookInfo: "Cotes Clinical Veterinary Advisor Dogs and Cats 4th Edition",
-        bookAuthor: "Leah A cohn",
-        bookPage: "504"),
-    Books(
-        bookInfo:
-            "Blackwell\'s Five-minute Veterinary Consult Canine and Feline",
-        bookAuthor: "Larry P. Tilly",
-        bookPage: "1101"),
-    Books(
-        bookInfo: "Small Animal Clinical Techniques,",
-        bookAuthor: "Susan M Taylor",
-        bookPage: "400"),
-    Books(
-        bookInfo: "Atlas of Small Animal Ultrasonography",
-        bookAuthor: "Dominique Pennick",
-        bookPage: "674"),
-    Books(
-        bookInfo: "Greene Infectious Diseases of the Dog and Cat",
-        bookAuthor: "Michael Lappin",
-        bookPage: "769"),
-    Books(
-        bookInfo:
-            "Small Animal Dermatology: A Color Atlas and Therapeutic Guide ",
-        bookAuthor: "Keith A. Hnilica",
-        bookPage: "578"),
-    Books(
-        bookInfo: "Miller and Evans\'Anatomy of the Dog ",
-        bookAuthor: "John W Hermanson",
-        bookPage: "405"),
-    Books(
-        bookInfo: "Essentials of Small Animal Anesthesia and Analgesia,",
-        bookAuthor: "Kurt A Grimm",
-        bookPage: "530"),
-    Books(
-        bookInfo: "BSAVA Small Animal Formulary, Part A, Canine and Feline,",
-        bookAuthor: "Fergus Allerton",
-        bookPage: "400"),
-    Books(
-        bookInfo: "BSAVA Small Animal Formulary, Part B, Exotic Pets,",
-        bookAuthor: "Joana Hedley",
-        bookPage: "670"),
-    Books(
-        bookInfo: "Manual of Canine and Feline Cardiology,",
-        bookAuthor: "Larry P. Tilley",
-        bookPage: "1001"),
-    Books(
-        bookInfo: "Atlas for the Diagnosis of Tumors in the Dog and Cat",
-        bookAuthor: "Wiley BlackWell",
-        bookPage: "789"),
-  ];
+
+
+ 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: "VetMed", color: primaryColor),
+      drawer: NavBarDrawer(),
+      appBar: const CustomAppBar(title: "VetMed", color: primaryColor),
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: Column(
@@ -105,15 +79,24 @@ class _BooksPageState extends State<BooksPage> {
               ),
             ),
             const SizedBox(height: 20),
-            Expanded(
-              child: Column(
-                children: [
-                  BooksCardTitleTile(
-                      text: "Title", midText: "Author", trailingText: "Pages"),
-                  Expanded(child: BooksCardTile(books: books))
-                ],
-              ),
-            ),
+            const BooksCardTitleTile(text: "Title", midText: "Author", trailingText: "page Number"),
+            const SizedBox(height: 5),
+           _isLoading? const CircularProgressIndicator(color: loginColor,) :  
+           Expanded(
+             child: ListView.builder(
+              scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                itemCount: booksCategory.length,
+                itemBuilder: (context, index){
+                  return BooksCardTile(
+                  bookInfo: booksCategory[index].bookInfo, 
+                  bookAuthor: booksCategory[index].bookAuthor, 
+                  bookPage: booksCategory[index].bookPage, 
+                  uploadLink: booksCategory[index].uploadLink
+                  );
+                }
+                ),
+           ),
           ],
         ),
       ),

@@ -1,7 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../utils/global_variables.dart';
+
+
 
 class BooksPageSearchBox extends StatelessWidget {
   final String searchText;
@@ -35,6 +38,8 @@ class BooksPageSearchBox extends StatelessWidget {
     );
   }
 }
+
+
 
 class BooksCardTitleTile extends StatefulWidget {
   final String text;
@@ -78,47 +83,51 @@ class _BooksCardTitleTileState extends State<BooksCardTitleTile> {
 class Books {
   final String bookInfo;
   final String bookAuthor;
- final String bookPage;
+ final int bookPage;
+ final String uploadLink;
 
-  Books({required this.bookInfo, required this.bookAuthor,required this.bookPage});
+  Books({required this.bookInfo, required this.bookAuthor,required this.bookPage, required this.uploadLink});
+
+ 
+  
 }
 
 // ignore: must_be_immutable
 class BooksCardTile extends StatelessWidget {
-  List<Books> books;
-   BooksCardTile({super.key, required this.books});
+  final String bookInfo;
+  final String bookAuthor;
+ final int bookPage;
+ final String uploadLink;
+   BooksCardTile({super.key, required this.bookInfo, required this.bookAuthor, required this.bookPage, required this.uploadLink});
+
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-       shrinkWrap: true,
-      itemCount: books.length,
-      scrollDirection: Axis.vertical,
-      itemBuilder: (BuildContext context, int index) {
-        final booksPage = books[index];
-      return Card(
-        child: Padding(
-          padding:
-              const EdgeInsets.only(left: 25, right: 0, top: 18, bottom: 18),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                flex: 2,
-                child: Text(booksPage.bookInfo, overflow: TextOverflow.ellipsis)),
-              Expanded(
-                flex: 2,
-                child: Text(booksPage.bookAuthor, overflow: TextOverflow.ellipsis)),
-              Expanded(
-                flex: 1,
-                child: Text(booksPage.bookPage))
-            ],
+      return SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Card(
+          child: Padding(
+            padding:
+                const EdgeInsets.only(left: 25, right: 0, top: 18, bottom: 18),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Text(bookInfo, overflow: TextOverflow.ellipsis)),
+                Expanded(
+                  flex: 2,
+                  child: Text(bookAuthor, overflow: TextOverflow.ellipsis)),
+                Expanded(
+                  flex: 1,
+                  child: Text(bookPage.toString()))
+              ],
+            ),
+        
+          )
           ),
-      
-        ),
-      
       );
-      }
-    );
+      
+  
   }
 }

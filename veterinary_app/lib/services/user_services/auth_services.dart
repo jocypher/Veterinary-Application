@@ -47,6 +47,7 @@ SharedPreferences? sharedPreferences;
             // using the provider to set the student to the specific user
             Provider.of<StudentProvider>(context, listen: false).setStudent(response.body);
           // navigate to the home page if login is successful
+          print(response.body);
             Navigator.pushNamedAndRemoveUntil(context, HomePage.routeName, (route) => false);
             
            
@@ -121,6 +122,44 @@ SharedPreferences? sharedPreferences;
 //   }else{
 //     //do nothing
 //   }
+
+void getUserData(
+    BuildContext context,
+  ) async {
+    try {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      String? token = prefs.getString('accessToken');
+
+      if (token == null) {
+        prefs.setString('accessToken', '');
+      }
+
+      var tokenRes = await http.post(
+        Uri.parse('$uri/auth'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+          'accessToken': token!
+        },
+      );
+
+      var response = jsonDecode(tokenRes.body);
+
+      if (response == true) {
+        http.Response userRes = await http.get(
+          Uri.parse('$uri/'),
+          headers: <String, String>{
+            'Content-Type': 'application/json; charset=UTF-8',
+            'accessToken': token
+          },
+        );
+
+        var userProvider = Provider.of<StudentProvider>(context, listen: false);
+        userProvider.setStudent(userRes.body);
+      }
+    } catch (e) {
+      SnackBarGlobal.showSnackBar(context, e.toString());
+    }
+  }
   
 
 }

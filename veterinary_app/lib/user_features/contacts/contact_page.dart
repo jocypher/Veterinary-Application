@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:veterinary_app/model/contacts_api.dart';
 import '../../common/widgets/custom_app_bar.dart';
 import '../../common/widgets/custom_heading.dart';
 import '../../common/widgets/nav_bar.dart';
@@ -16,45 +17,25 @@ class ContactPage extends StatefulWidget {
 }
 
 class _ContactPageState extends State<ContactPage> {
+  List<Contact> contactCollection = List<Contact>.empty(growable: true);
+  bool _isLoading = true;
 
-  List<Contact> contacts = [
-    Contact(
-        lecturerName: "Mr.Jo",
-        lecturerOffice: "Economics Department",
-        officeHours: DateTime.now().copyWith(day: 5 ,hour: 6),
-        email: "jo@gmail.com"),
-    Contact(
-        lecturerName: "Dr.Eric Akobeng",
-        lecturerOffice: "Chemistry Department",
-        officeHours:DateTime.now().copyWith(day: 3, hour: 8),
-        email: "eakobeng@gmail.com"),
-        Contact(
-        lecturerName: "Dr.James Gordon",
-        lecturerOffice: "Pyschology department",
-        officeHours: DateTime.now().copyWith(day: 1, hour: 4),
-        email: "jgorden@gmail.com"),
-        Contact(
-        lecturerName: "Dr.Chris Evans",
-        lecturerOffice: "Soil Department",
-        officeHours: DateTime.now().copyWith(day: 2, hour: 8),
-        email: "cevans@gmail.com"),
-        Contact(
-        lecturerName: "Mr. Mark Attah mensah",
-        lecturerOffice: "mamensah@gmail.com",
-        officeHours: DateTime.now().copyWith(day: 5, hour: 9),
-        email: "nemo@gmail.com"),
-        Contact(
-        lecturerName: "Dr. Dennis Light",
-        lecturerOffice: "Veterinary Department",
-        officeHours: DateTime.now().copyWith(day: 3, hour: 10),
-        email: "nemo@gmail.com"),
-        Contact(
-        lecturerName: "Mr. Ali Ababua",
-        lecturerOffice: "Veterinary Department",
-        officeHours: DateTime.now().copyWith(day: 2, hour: 8),
-        email: "aababu@gmail.com"),
+@override
+  void initState() {
+    super.initState();
+    getContacts();
+  }
 
-  ];
+void getContacts() async{
+  ContactApi contactApi = ContactApi();
+  await contactApi.getContacts();
+  contactCollection  = contactApi.contacts;
+  print("Number of books fetched: ${contactApi.contacts.length}");
+setState(() {
+  _isLoading = false;
+});
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,8 +57,21 @@ class _ContactPageState extends State<ContactPage> {
               style: TextStyle(
                   fontSize: 40, fontWeight: FontWeight.w700, color: loginColor),
             )),
-            SizedBox(height: 30,),
-            ContactWidget(contacts: contacts)
+            const SizedBox(height: 30,),
+            _isLoading? const CircularProgressIndicator(color: loginColor,): GridView.builder(
+              shrinkWrap: true,
+              scrollDirection: Axis.vertical,
+              itemCount: contactCollection.length,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2, childAspectRatio: 1/.8),
+             itemBuilder: (context, index){
+              return ContactWidget(
+                lecturerName: contactCollection[index].lecturerName, 
+              email: contactCollection[index].email, 
+              lecturerOffice: contactCollection[index].lecturerOffice, 
+              officeHours: contactCollection[index].officeHours, 
+              title: contactCollection[index].title);
+             })
           ]),
         ),
       ),

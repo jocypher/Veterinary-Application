@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:veterinary_app/provider/selectedFileProvider.dart';
 import 'package:veterinary_app/provider/student.dart';
 import 'package:veterinary_app/router_generator.dart';
+import 'package:veterinary_app/services/user_services/auth_services.dart';
 import 'package:veterinary_app/user_features/account/login_page.dart';
 import 'package:veterinary_app/user_features/home/home_page.dart';
 import 'package:veterinary_app/utils/snackBar.dart';
@@ -27,8 +28,12 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  
-  
+  UserAuthService userAuthService = UserAuthService();
+  @override
+  void initState() {
+    super.initState();
+    userAuthService.getUserData(context);
+  }
 
   @override
   Widget build(BuildContext context) {

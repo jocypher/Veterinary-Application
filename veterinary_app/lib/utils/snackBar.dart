@@ -11,4 +11,6 @@ class SnackBarGlobal {
       ..hideCurrentSnackBar()
       ..showSnackBar(SnackBar(content: Text(text)));
   }
+
+  
 }
